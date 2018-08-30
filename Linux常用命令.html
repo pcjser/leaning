@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+	body {
+		font-size: 16px;
+	}
+	.red {
+		color: red;
+	}
+</style>
+<body>
+	<h3>命令格式</h3>
+	<pre>
+	命令格式： 命令 [-选项] [参数]
+		例如：  ls    -la    /etc
+	说明： 	1）个别命令使用不遵循此格式
+			2）当有多个选项时，可以写在一起
+			3）简化选项与完整选项
+			    -a 等于 --all
+	</pre>
+	<h3>目录处理命令：ls</h3>
+	<pre>
+	命令名称： ls
+	命令英文原意： <span class="red">l</span>i<span class="red">s</span>t
+	命令所在路径： /bin/ls
+	执行权限：所有用户
+	功能描述：显示目录文件
+	语法： ls 选项[-ald] [文件目录]
+	ls /  (接文件夹地址) 查看指定目录的文件列表
+	ls -a (all) 查看所有文件包括隐藏文件 (命名.开头的文件)
+	ls -l (long) 详细信息文件列表 长文件显示
+	ls -lh 文件单位智能显示
+	ls -d 查看目录的详细信息不看下面文件 通常和-l一起用
+	ls -i 查看文件的id(唯一)	
+	-rw-r--r--
+	- 第一位表示文件类型（-二进制文件 d目录 l软件链接文件）
+	rw- r-- r--
+	 u   g   o
+	读：r
+	写：w
+	执行：x	
+	所有者：u 文件创始人
+	所属组：g 所在组
+	其他人：o
+	</pre>
+	<h3>目录处理命令：mkdir</h3>
+	<pre>
+	命令名称： mkdir
+	命令英文原意： <span class="red">m</span>a<span class="red">k</span>e <span class="red">dir</span>ectories
+	命令所在路径： /bin/mkdir
+	执行权限：所有用户
+	功能描述：创建新目录
+			  -p 递归创建
+	语法： mkdir -p [目录名]
+	mkdir -p 递归可在原本不存在的目录下创建目录	
+	实例：	mkdir -p /tmp/Japan/boduo (可接多个创建 空格隔开)
+	</pre>
+	<h3>目录处理命令：cd</h3>
+	<pre>
+	命令名称： cd
+	命令英文原意： <span class="red">c</span>hange <span class="red">d</span>irectory
+	命令所在路径： shell内置命令
+	执行权限：所有用户
+	功能描述：切换目录
+	语法： cd [目录名]
+	实例：	cd / 切换到根目录
+			cd .. 切换到上级目录
+			cd /tmp/Japan 切换到指定目录
+	</pre>
+	<h3>目录处理命令：rmdir</h3>
+	<pre>
+	命令名称： rmdir
+	命令英文原意： <span class="red">r</span>e<span class="red">m</span>ove <span class="red">dir</span>ectories
+	命令所在路径： /bin/rmdir
+	执行权限：所有用户
+	功能描述：删除空目录(必须是空目录)
+	语法： rmdir [目录名]
+	实例：	rmdir /tmp/Japan/boduo
+	</pre>
+	<h3>目录处理命令：cp</h3>
+	<pre>
+	命令名称： cp
+	命令英文原意： <span class="red">c</span>o<span class="red">p</span>y
+	命令所在路径： /bin/cp
+	执行权限：所有用户
+	功能描述：复制文件或目录
+	语法： cp -rp [原文件或目录][目标目录]
+			  -r  复制目录
+			  -p  保留文件属性		(保留所有属性   包括修改时间   不被cp修改掉)
+  	实例：	cp /etc/grub.conf /tmp 	(复制文件)
+  			cp -r /tmp/Japan/boduo /root 	(复制文件夹  加-r)
+  			cp /root/文件名 /root/文件名 /目标目录 		(复制多文件)
+  			cp -r /tmp/Japan/boduo /root/12345			(复制文件并更名 12345)
+
+	pwd 查看当前文件夹完整路径
+	clear 清屏   或者(CTRL + L)
+	</pre>
+	<h3>目录处理命令：mv</h3>
+	<pre>
+	命令名称： mv
+	命令英文原意： <span class="red">m</span>o<span class="red">v</span>e
+	命令所在路径： /bin/mv
+	执行权限：所有用户
+	功能描述：剪切文件/改名
+	语法： mv [原文件或目录][目标目录]
+  	实例：	mv /etc/grub.conf /tmp 	(剪切文件/文件夹)
+  			mv /root/文件名 /root/文件名 /目标目录 		(剪切多文件)
+  			mv /tmp/Japan/boduo /root/12345			(剪切文件并更名 12345)
+  			mv cangjing canglaoshi 					(当前文件夹下改名)
+	</pre>
+	<h3>目录处理命令：rm</h3>
+	<pre>
+	命令名称： rm
+	命令英文原意： <span class="red">r</span>e<span class="red">m</span>ove
+	命令所在路径： /bin/rm
+	执行权限：所有用户
+	功能描述：删除文件/目录
+	语法： rm -rf [文件或目录]
+			  -r 删除目录
+			  -f 强制执行
+  	实例：	rm 文件名
+  			rm -f 文件名 			(强制执行，不进行询问)
+  			rm -r 目录名称			(删除目录 通常和-f连用  不进行询问)
+  			rm -rf	目录名称
+	</pre>
+	<h3>文件处理命令：touch</h3>
+	<pre>
+	命令名称： touch
+	命令所在路径： /bin/touch
+	执行权限：所有用户
+	功能描述：创建空文件
+	语法： touch [文件名]
+  	实例：	touch 文件名			(当前目录下)
+  			touch /root/文件名		(指定目录下)
+	注意：不建议用空格  用空格需要用“”引起来
+	</pre>
+	<h3>文件处理命令：cat/tac(按行倒序排列)</h3>
+	<pre>
+	命令名称： cat
+	命令所在路径： /bin/cat
+	执行权限：所有用户
+	功能描述：显示文件内容
+			  -n 显示行号
+	语法： cat [文件名]
+  	实例：	cat /etc/issue
+	</pre>
+	<h3>文件处理命令：more</h3>
+	<pre>
+	命令名称： more
+	命令所在路径： /bin/more
+	执行权限：所有用户
+	语法： more [文件名]
+			(空格)或f	翻页
+			(Enter) 	换行
+			q或者Q		退出
+	功能描述：分页显示文件内容	
+  	实例：	more /etc/services
+	</pre>
+	<h3>文件处理命令：less</h3>
+	<pre>
+	命令名称： less
+	命令所在路径： /usr/bin/less
+	执行权限：所有用户
+	语法： less [文件名]
+			(空格)或f	翻页
+			(Enter) 	换行
+			q或者Q		退出
+	功能描述：分页显示文件内容(可向上翻页)
+	可进行搜索功能
+		浏览状态页  输入 /关键词 enter(回车) 
+		关键词高亮
+		按键n(next)可以向下查找	
+  	实例：	less /etc/services
+	</pre>
+	<h3>文件处理命令：head</h3>
+	<pre>
+	命令名称： head
+	命令所在路径： /usr/bin/head
+	执行权限：所有用户
+	语法： head [文件名]
+	功能描述：显示文件前面几行
+				-n 指定行数
+  	实例：	head -n 20 /etc/services
+	</pre>
+	<h3>文件处理命令：tail</h3>
+	<pre>
+	命令名称： tail
+	命令所在路径： /usr/bin/head
+	执行权限：所有用户
+	语法： tail [文件名]
+	功能描述：显示文件后面几行
+				-n 指定行数
+				-f 动态显示文件末尾内容
+  	实例：	tail -n 18 /etc/services
+	</pre>
+</body>
+</html>

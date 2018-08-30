@@ -1,0 +1,30 @@
+h1 {
+  color :red;
+}
+
+h1
+  color :red;
+
+h1
+  color red
+
+//变量定义
+$color red;
+color: red;
+
+//mixin混合
+alert($color = blue) {
+  color : $color;
+}
+
+
+
+//继承
+.block {
+  margin: 10px;
+  padding: 10px;
+}
+
+p {
+  @extend .block;
+}

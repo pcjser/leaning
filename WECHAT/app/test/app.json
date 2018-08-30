@@ -1,0 +1,27 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/vip/vip",
+    "pages/vip/privilege/privilege",
+    "pages/vip/task/task",
+    "pages/store/store",
+    "pages/store/record/record",
+    "pages/store/record/detail/detail",
+    "pages/store/integral/integral",
+    "pages/store/goods/goods",
+    "pages/store/gdetail/gdetail",
+    "pages/game/game",
+    "pages/game/detail/detail",
+    "pages/login/login",
+    "pages/personal/personal",
+    "pages/personal/address/address"
+  ],
+  "window":{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle":"black",
+    "navigationBarTitleText": "安锋用户宝",
+    "backgroundColor": "#f00",
+    "backgroundTextStyle":"light",   
+    "enablePullDownRefresh": false
+  }
+}

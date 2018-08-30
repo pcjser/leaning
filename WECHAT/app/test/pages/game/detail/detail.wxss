@@ -1,0 +1,178 @@
+.game-detail-page {
+  padding-bottom: 30rpx;
+}
+.game-detail-page .game-info {
+  height: 360rpx;
+  position: relative;
+}
+.game-detail-page .game-info .background {
+  position: absolute;
+  width: 750rpx;
+  height: 290rpx;
+  background-repeat: no-repeat;
+  background-size: 750rpx 290rpx;
+  background-position: center center;
+  opacity: .7;
+}
+.game-detail-page .game-info .info {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  overflow: hidden;
+}
+.game-detail-page .game-info .info .cover {
+  width: 152rpx;
+  height: 152rpx;
+  display: block;
+  margin: 56rpx auto 16rpx;
+}
+.game-detail-page .game-info .info .name {
+  font-size: 50rpx;
+  color: #303030;
+  font-weight: 700;
+  margin-top: 20rpx;
+}
+.game-detail-page .game-info .info .tag-wrap {
+  margin-top: 16rpx;
+  display: flex;
+  justify-content: center;
+}
+.game-detail-page .game-info .info .tag-wrap .tag {
+  font-size: 22rpx;
+  padding: 2rpx 14rpx 4rpx;
+  margin: 0 8rpx;
+  background: #ebecef;
+  color: #666;
+  border-radius: 24rpx;
+}
+.game-detail-page .banner {
+  height: 500rpx;
+  overflow-x: auto;
+  margin: 30rpx 0;
+}
+.game-detail-page .banner .banner-wrap {
+  font-size: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+}
+.game-detail-page .banner .banner-wrap .image {
+  width: 300rpx;
+  height: 500rpx;
+  margin-right: 20rpx;
+}
+.game-detail-page .banner .banner-wrap .image:first-child {
+  margin-left: 20rpx;
+}
+.game-detail-page .info-block {
+  color: #303030;
+}
+.game-detail-page .info-block .title {
+  margin-left: 32rpx;
+  font-weight: 700;
+  font-size: 34rpx;
+  border-top: 1rpx solid #efefef;
+  padding-top: 30rpx;
+  margin-bottom: 16rpx;
+}
+.game-detail-page .info-block .text {
+  font-size: 28rpx;
+  line-height: 1.5;
+  padding: 0 32rpx;
+  position: relative;
+  margin-bottom: 28rpx;
+}
+.game-detail-page .info-block .text .show-more {
+  line-height: 1.5;
+  float: right;
+  color: #00c806;
+}
+.game-detail-page .info-block .topic {
+  overflow-x: auto;
+  margin-bottom: 30rpx;
+}
+.game-detail-page .info-block .topic .topic-wrap {
+  font-size: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+}
+.game-detail-page .info-block .topic .topic-wrap .topic-item {
+  width: 540rpx;
+  margin-right: 20rpx;
+  display: inline-block;
+}
+.game-detail-page .info-block .topic .topic-wrap .topic-item:first-child {
+  margin-left: 32rpx;
+}
+.game-detail-page .info-block .topic .topic-wrap .topic-item:last-child {
+  margin-right: 32rpx;
+}
+.game-detail-page .info-block .topic .topic-wrap .topic-item .topic-image {
+  border-radius: 20rpx;
+  width: 540rpx;
+  height: 236rpx;
+}
+.game-detail-page .info-block .topic .topic-wrap .topic-item .topic-title {
+  font-size: 28rpx;
+  color: #303030;
+  text-align: center;
+  margin-top: 16rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.game-detail-page .info-block .gift .gift-item {
+  margin-left: 32rpx;
+  width: 504rpx;
+  position: relative;
+  margin-bottom: 32rpx;
+}
+.game-detail-page .info-block .gift .gift-item .gift-name {
+  color: #303030;
+  font-size: 32rpx;
+  padding-bottom: 8rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.game-detail-page .info-block .gift .gift-item .gift-content {
+  font-size: 28rpx;
+  color: #999999;
+  line-height: 1.7;
+}
+.game-detail-page .info-block .gift .gift-item .get-button {
+  position: absolute;
+  right: -180rpx;
+  background-color: #00c806;
+  text-align: center;
+  width: 124rpx;
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  color: #ffffff;
+  border-radius: 10rpx;
+  transform: translateY(-50%);
+  top: 50%;
+}
+.game-detail-page .download {
+  position: fixed;
+  bottom: 0;
+  background: linear-gradient(90deg, #00df73, #00c806);
+  right: 0;
+  left: 0;
+  height: 104rpx;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.game-detail-page .download .icon {
+  width: 30rpx;
+  height: 33rpx;
+  margin-right: 20rpx;
+}
+.game-detail-page .download .size {
+  padding-top: 10rpx;
+  font-size: 24rpx;
+  margin-left: 12rpx;
+}

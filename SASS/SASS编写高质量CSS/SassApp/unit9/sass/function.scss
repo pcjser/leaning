@@ -1,0 +1,41 @@
+/*********内置函数*****************/
+/*rgb() rgba()  函数*/
+body {
+	color: rgb(255, 123, 0);
+	background: rgba(255, 0, 0, .5);
+	/*等同于*/
+	$color: rgb(255, 123, 0);
+	color: $color;
+	background: rgba($color, 0.5);
+
+	/*darken 颜色加深  lighten 颜色变浅*/
+	p {
+		color: darken($color, 0.5);
+		background: lighten($color, 0.5);
+	}
+
+	/*str-length()  函数 返回字符串长度*/
+	p {
+		z-index: str-length("aaaaaa");   //返回6
+	}
+
+	/*str-index()  返回字符所在下标   从1开始计*/
+	p {
+		z-index: str-index("asdfg", "d");  //返回值为3
+	}
+}
+
+/*********自定义函数***************/
+@function double($width) {   	//参数
+	@return $width * 2;			//返回值
+}
+
+p {
+	width: double(5px);
+}
+
+@debug 'This is debug test';
+
+@warn 'This is Warn';
+
+// @error 'Error';

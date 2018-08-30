@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/zepto/1.1.4/zepto.min.js"></script>
+</head>
+<style>
+    html,body {
+        height: 100%;
+    }
+</style>
+<body>
+
+<button onclick="test()">test</button>
+</body>
+
+<script src="../../jq.PM.js"></script>
+<script src="template.js"></script>
+<script src="app.vote.js"></script>
+<script>
+    ;(function(){
+        PM.init();
+
+        // PM.event('hide');
+        // PM.run('ChangeSkin', 'change', '../src/images/1.jpg');
+        // PM.removePlugin('ChangeSkin');
+
+    })();
+    function test()
+    {
+        PM.event('CreateVote',"{\"cnt\":\"234\",\"opt\":[\"234\",\"234234\",\"4\"]}");
+    }
+</script>
+</html>

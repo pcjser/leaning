@@ -1,0 +1,22 @@
+<view class="login-page">
+  <tip class="tip">请登录已有安锋游戏账号。安锋游戏承诺保障你的手机号及账号信息隐私安全。</tip>
+  <view class="nav">
+    <view class="nav-item active">
+      登录安锋账号
+    </view>
+    <view class="nav-item" style="visibility: hidden">
+      补全账号信息
+    </view>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class="section">
+      <view class="input-label">登录账号</view>
+      <input class="input-box" name="username" placeholder="安锋游戏账号" />
+      <view class="input-label">登录密码</view>
+      <input class="input-box" type="password" name="password" placeholder="密码" />
+    </view>
+    <view class="btn">
+      <button formType="submit">确定登录</button>
+    </view>
+  </form>
+</view>

@@ -1,0 +1,12 @@
+{
+  "name": "Profiles",
+  "showInMarket":0,
+  "tag":  "Profiles",
+  "version": "0.0.1",
+  "enable":1,
+  "canBeDeleted":0,
+  "showInMenu":0,
+  "order":0,
+  "setUrl":"",
+  "intro":"性能监测应用"
+}

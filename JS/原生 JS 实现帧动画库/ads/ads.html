@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.container {
+				width: 375px;
+				height: 375px;
+				position: relative;
+			}
+			.ads {
+				width: 375px;
+				height: 375px;
+				background-repeat: no-repeat;
+				z-index: 1;
+				position: absolute;
+			}
+			.ad {
+				width: 158px;
+				height: 129px;
+				position: absolute;
+			    left: 93px;
+			    top: 188px;
+			    background-repeat: no-repeat;
+			    background-size: contain;
+			    background-position: center center;
+			    /*background-image: url(lockad_01.jpg);*/
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="ads" id="ads"></div>
+			<div class="ad"></div>
+		</div>		
+	</body>
+	<script src="animation.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="ads.js" type="text/javascript" charset="utf-8"></script>
+</html>

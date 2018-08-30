@@ -1,0 +1,58 @@
+.store-goods-page {
+  background-color: #f3f4f7;
+  min-height: 100vh;
+  .container {
+    height: 100vh;
+  }
+  .goods-list {
+    display: flex;
+    flex-wrap: wrap;
+    .goods-item {
+      background-color: #ffffff;
+      width: 370rpx;
+      margin-bottom: 10rpx;
+      position: relative;
+      color: #999999;
+      font-size: 28rpx;
+      height: 372rpx;
+      &:nth-child(2n+1) {
+        margin-right: 10rpx;
+      }
+      .cover {
+        width: 370rpx;
+        height: 207rpx;
+        display: block;
+      }
+      .vip {
+        position: absolute;
+        width: 116rpx;
+        height: 40rpx;
+        border-radius: 0 0 14rpx 0;
+        background-color: #ec3833;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24rpx;
+      }
+      .goods_name {
+        padding: 14rpx 0 14rpx 10rpx;
+        line-height: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #303030;
+      }
+      .goods_number {
+        line-height: 1;
+        padding: 4rpx 0 4rpx 10rpx;
+      }
+      .goods_score {
+        padding: 8rpx 0 0 10rpx;
+        .red {
+          color: #ec3833;
+        }
+      }
+    }
+  }
+}

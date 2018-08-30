@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QT页面脚手架</title>
+    <script type="text/javascript" src="/src/js/zepto.min.js"></script>
+    <script type="text/javascript" src="/src/js/qwebchannel.js"></script>
+</head>
+<!--
+{
+    "type": "1弹幕2礼物",
+    "platform": "平台douyu",
+    "id": "发送人id",
+    "name": "发送人昵称",
+    "message": "弹幕内容",
+    "giftId": "礼物id",
+    "level": "发送人级别",
+    "time": "发送时间",
+    "giftCount": "礼物数量"
+}
+-->
+<body>
+    <form id='theForm'>
+
+        <button type="button" onclick="evt()">提交</button>
+    </form>
+    <script type="text/javascript">
+
+
+
+        //表单转json
+        function getJson() {
+            var json=$('#theForm').serializeObject();
+            return json;
+        };
+
+        function evt()
+        {
+            var json={"event":"CreateVote","data":getJson()};
+            obsEvt(json);
+        }
+
+        function run()
+        {
+            var json={"app":"","method":"","data":getJson()};
+            obsRun(json);
+        }
+
+        function appData(json)
+        {
+
+        }
+        obsRun({"app":"Vote","method":"export"});
+
+    </script>
+
+    <script type="text/javascript" src="/src/js/qtcommon.js"></script>
+</body>
+</html>

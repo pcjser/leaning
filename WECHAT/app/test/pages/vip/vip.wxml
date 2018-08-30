@@ -1,0 +1,45 @@
+<view class="vip-page">
+  <swiper class="vip-swiper" current="{{vipLevel}}" interval="3000" duration="500" bindchange="handleChange">
+    <block wx:for="{{swiperData}}" wx:for-index="idx" wx:for-item="data" wx:key="level-{{idx}}">
+      <swiper-item class="swiper-item">
+            <view class="image-box">          
+              <image src="./images/{{data.backgroundImage}}" class="image" />
+              <view class="level-info">
+                <text class="level">{{data.level === 0 ? '普通会员' : 'VIP' + data.level}}</text>
+                <view class="step" wx:if="{{data.level === (vipLevel - 1)}}">
+                  <image class="level-icon" src="./images/icon-royal.png" />上一等级
+                </view>
+                <view class="step" wx:if="{{data.level === vipLevel}}">
+                  <image class="level-icon" src="./images/icon-royal.png" />当前等级
+                </view>
+                <view class="step" wx:if="{{data.level === (vipLevel + 1)}}">
+                  <image class="level-icon" src="./images/icon-royal.png" />下一等级
+                </view>
+                <view wx:if="{{vipLevel === data.level}}">
+                  <progress class="progress" percent="{{percent}}" color="#fff" backgroundColor="rgba(0,0,0,.2)" />
+                  <view class="num">{{userExp}} / {{data.integral}}</view>
+                </view>
+                <text class="s-tip">升级VIP会员享受更多权益</text>
+              </view>
+            </view>
+            <view class="tip" wx:if="{{data.level === 0}}">尊敬的普通会员，升级VIP1您享受以下专属特权</view>
+            <view class="tip" wx:else>尊敬的VIP会员，您享受以下专属特权</view>
+            <view class="privilege">
+              <block wx:for="{{data.privilege}}" wx:for-index="idx" wx:for-item="item" wx:key="item-{{idx}}">
+                <view class="privilege-item">
+                  <navigator url="./privilege/privilege?type={{item.type}}">
+                    <view class="icon" style="background: {{data.backgroundColor}}">
+                      <image src="./images/{{item.icon}}" />
+                    </view>
+                  </navigator>
+                  <view class="name">{{item.name}}</view>
+                </view>
+              </block>
+            </view>  
+      </swiper-item>
+    </block>
+  </swiper>
+  <navigator url="./task/task" class="up" style="background: {{buttonBg}}">
+    提升成长值
+  </navigator>
+</view>

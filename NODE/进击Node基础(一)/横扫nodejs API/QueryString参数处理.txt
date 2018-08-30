@@ -1,0 +1,4 @@
+QueryString.stringify()     //对象转字符串
+QueryString.parse()         //字符串转对象
+QueryString.escape()        //字符转义
+QueryString.unescape()      //字符反转义

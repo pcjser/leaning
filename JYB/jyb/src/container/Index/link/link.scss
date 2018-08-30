@@ -1,0 +1,23 @@
+.link-map {
+  display: flex;
+  height: 2.906667rem /* 218/75 */;
+  align-items: center;
+  margin-bottom: 0;
+  background-color: #ffffff;
+  .link-item {
+    flex-grow: 1;
+    text-align: center;
+    font-size: .346667rem /* 26/75 */;
+    a {
+      display: block;
+      i {
+        border: .026667rem /* 2/75 */ solid #f00;
+        border-radius: 50%;
+        padding: .266667rem /* 20/75 */;
+        font-size: .8rem /* 60/75 */;
+        margin-bottom: 0.15rem;
+        color: #ff0000;
+      }
+    }
+  }
+}

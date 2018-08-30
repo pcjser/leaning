@@ -1,0 +1,23 @@
+@function buildLayout($num: 5) {
+	$map: (defaultValue: 0);
+	$rate: percentage(1 / $num);
+	@for $i from 1 through $num {
+		$temMap: (col#{$i}: $rate * $i);
+		$map: map-merge($map, $temMap);	//map 写入
+	}
+	$map: map-remove($map, defaultValue);	//map  删除
+	@return $map;
+}
+
+@mixin buildLayout($num: 5) {
+	$map: buildLayout($num);
+	@each $key, $value in $map {
+		.#{$key} {
+			width: $value;
+		}
+	}
+}
+
+// @debug buildLayout(12);
+
+@include buildLayout(12);

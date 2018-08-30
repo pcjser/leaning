@@ -1,0 +1,10 @@
+*~
+.DS_Store
+
+.idea
+.sass-cache
+node_modules
+dist
+
+/项目实践/VUE/vuedemo3/build/dev-server.js
+/NODE/node_site/bower_components

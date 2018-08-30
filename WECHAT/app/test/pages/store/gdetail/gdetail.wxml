@@ -1,0 +1,31 @@
+<wxs src="../../../utils/filter.wxs" module="filter"></wxs>
+<import src="../../wxParse/wxParse.wxml"/>
+
+<view class="store-gdetail-page">
+  <image class="cover" src="https:{{filter.srcFilter(goodsInfo.goods_img)}}" />
+  <view class="info">
+    <view class="name">{{goodsInfo.goods_name}}<text class="vip" wx:if="{{goodsInfo.vip !== 0}}">VIP{{goodsInfo.vip}}</text></view>
+    <view class="need">
+      <view class="line">所需积分：<text class="red">{{goodsInfo.score}}</text></view>
+      <view class="line">剩余数量：<text>{{goodsInfo.goods_number}}</text></view>
+    </view>   
+  </view>
+  <view class="detail">
+    <view class="title"><view class="line"></view>商品详情</view>
+    <view class="content">
+      <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+    </view>
+  </view>
+  <view class="exchange">
+    <view wx:if="{{goodsInfo.is_buy === 0}}" class="button disable">已兑换</view>
+    <view wx:else>
+      <view wx:if="{{goodsInfo.goods_number !== 0}}">
+        <view class="button disable" wx:if="{{goodsInfo.user_vip < goodsInfo.vip}}">VIP等级不足</view>
+        <view wx:else bindtap="exchangeTap" class="button">立即兑换</view>      
+      </view>
+      <view wx:else>
+        <view class="disable button">暂无库存</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+.store-integral-page {
+  .container {
+    height: 100vh;
+  }
+  .integral-list { 
+    .integral-item {
+      display: flex;
+      align-items: center;
+      padding: 0 24rpx 60rpx;
+      &:first-child {
+        margin-top: 40rpx;
+      }
+      &:last-child {
+        .point:after {
+          background: none;
+        }        
+      }
+      .point {
+        margin-top: 4rpx;
+        width: 21rpx;
+        height: 21rpx;
+        background-color: #ec3833;
+        border-radius: 50%;
+        margin-right: 20rpx;
+        position: relative;
+        left: -1rpx;        
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: -86rpx;
+          background-color: #ec3833;
+          width: 4rpx;
+          height: 68rpx;
+          left: 9rpx;
+        }        
+      }
+      .symbol {
+        width: 28rpx;
+        text-align: center;
+      }
+      .int-num {
+        width: 150rpx;
+        color: #303030;
+        font-weight: 700;
+      }
+      .int-text {
+        font-size: 28rpx;
+        color: #999999;
+        line-height: 1;
+        .time {
+          margin-top: 10rpx;
+        }        
+      }
+    }
+  }
+}

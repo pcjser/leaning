@@ -1,0 +1,48 @@
+.game-page {
+  padding-left: 32rpx;
+}
+.game-page .container {
+  height: 100vh;
+}
+.game-page .game-item {
+  display: flex;
+  border-top: 1rpx solid #efefef;
+  padding: 28rpx 0;
+}
+.game-page .game-item:first-child {
+  border-top: none;
+}
+.game-page .game-item .game-cover {
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 24rpx;
+  margin-right: 28rpx;
+}
+.game-page .game-item .game-info {
+  width: 500rpx;
+}
+.game-page .game-item .game-info .name {
+  font-size: 32rpx;
+  line-height: 52rpx;
+  color: #303030;
+}
+.game-page .game-item .game-info .desc {
+  font-size: 28rpx;
+  color: #999999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 44rpx;
+}
+.game-page .game-item .game-info .tag-wrap {
+  font-size: 22rpx;
+  display: flex;
+  margin-top: 6rpx;
+}
+.game-page .game-item .game-info .tag-wrap .tag {
+  color: #ffffff;
+  background-color: #00c806;
+  margin-right: 12rpx;
+  padding: 0 10rpx 2rpx;
+  border-radius: 6rpx;
+}

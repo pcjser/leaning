@@ -1,0 +1,13 @@
+.course-page {
+  width: 10rem;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 0 0 1.2rem;
+  .banner {
+    height: 3.573333rem /* 268/75 */;
+    img {
+      height: 3.573333rem /* 268/75 */;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<wxs src="../../../utils/filter.wxs" module="filter"></wxs>
+<view class="store-goods-page">
+  <loading wx:if="{{!init}}">加载中...</loading>
+  <scroll-view wx:if="{{init && goodsList.length > 0}}" class="container" scroll-y bindscrolltolower="loadmore"> 
+      <view class="goods-list">
+      <block wx:for="{{goodsList}}" wx:for-item="goods" wx:key="goods-{{index}}">
+        <navigator url="../gdetail/gdetail?goodsId={{goods.goods_id}}" class="goods-item">
+          <text class="vip" wx:if="{{goods.vip != 0}}">VIP{{goods.vip}}</text>
+          <image class="cover" src="https:{{filter.srcFilter(goods.goods_img)}}" />
+          <view class="goods_name">{{goods.goods_name}}</view>
+          <view class="goods_number">剩余数量：{{goods.goods_number}}</view>
+          <view class="goods_score">所需积分：<text class="red">{{goods.score}}</text></view>
+        </navigator>
+      </block>
+      </view>
+      <view class="no-more" wx:if="{{!hasMore}}">暂无更多数据</view>
+  </scroll-view>
+  <view wx:else class="no-data">
+    <image class="no-data-img" src="../../../assets/no_data.png" />
+    <view class="no-data-text">暂无数据</view>
+  </view>
+</view>

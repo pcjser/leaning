@@ -1,0 +1,143 @@
+<style>
+    #stage_Vote >div{
+        min-width:220px;
+        /*height:100%;*/
+        background-color: rgba(255,255,255,0.6);
+        padding-bottom: 10px;
+        font-size:20px;
+    }
+    #stage_Vote .title{
+        width:100%;
+        height:34px;
+        line-height:34px;
+        text-align: center;
+        color: #fff;
+        font-size: 1em;
+        letter-spacing: 2px;
+    }
+    #stage_Vote .radiusCnt{
+        border-radius: 3px;
+        margin:5px;
+        background-color: #fbfbfb;
+        color: #666;
+        padding: 5px 10px;
+        font-size: 1em;
+    }
+    #stage_Vote h3,#stage_Vote .voteName{
+        color:#43befe;
+        font-size:1.1em;
+        margin-bottom: 5px;
+    }
+    #stage_Vote li{
+        list-style: none;
+        margin: 10px 0;
+    }
+    #stage_Vote .voteBar{
+        width:1%;
+        background-color: rgb(255,208,125);
+        height: 5px;
+        display: inline-block;
+    }
+    #stage_Vote .voteCount{
+        color:#f61752;
+        font-size:1em;
+        float: right;
+    }
+    #stage_Vote .barrageName{
+        color:#04c073;
+        font-size:1.1em;
+    }
+    #stage_Vote .barrageCnt{
+        color:#666;
+        font-size:1.1em;
+    }
+    #stage_Vote .timer{
+        width:100%;
+        text-align: center;
+        color: #fff;
+        font-size:0.9em;
+    }
+    #stage_Vote .timer>div{
+        margin:0 10px;
+        height:70px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center 0;
+    }
+    #stage_Vote .title{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center 0;
+    }
+
+    #stage_Vote .timer>div.default{
+        background-image: url("/app/Vote/images/style/default/btn-vote.png");
+    }
+    #stage_Vote .title.default{
+        background-image: url("/app/Vote/images/style/default/title-panel.png");
+    }
+    #stage_Vote .timer>div.yellow{
+        background-image: url("/app/Vote/images/style/yellow/btn-vote.png");
+    }
+    #stage_Vote .title.yellow{
+        background-image: url("/app/Vote/images/style/yellow/title-panel.png");
+    }
+    #stage_Vote .timer .title{
+        background-image:none;
+        width: 100%;
+    }
+    #stage_Vote #barrageList{
+        min-height:100px;
+    }
+    #stage_Vote #barrageList p{
+        margin:5px 0;
+    }
+    #stage_Vote #voteData{
+        min-height:50px;
+    }
+    #stage_Vote #voteData>div{
+        margin:10px 0;
+    }
+    #stage_Vote li.voteItem{
+        white-space: nowrap;
+    }
+</style>
+<div class="content" style="/*position: absolute;*/clear:both">
+    <div class="title {{style}}">弹幕投票</div>
+    <div class="radiusCnt">
+        <h3 class="h3">投票说明</h3>
+        <p>{{#cnt}}</p>
+        <ul>
+            {{each opt as value i}}
+            <li class="voteItem">输入弹幕{{bar[i]}}，投 "{{value}}" 一票</li>
+            {{/each}}
+        </ul>
+    </div>
+
+
+    <div class="radiusCnt">
+        <h3 class="h3">投票进度</h3>
+        <div id="voteData">
+
+
+        </div>
+    </div>
+
+
+    <div class="radiusCnt">
+        <h3 class="h3">弹幕池</h3>
+        <div id="barrageList">
+
+        </div>
+    </div>
+
+    <div class="timer">
+        <div class="{{style}}">
+            <p class="title">投票</p>
+            <p><span id="timerType">倒计时</span> <span id="timer">00:00:00</span></p>
+        </div>
+    </div>
+
+</div>
+
+

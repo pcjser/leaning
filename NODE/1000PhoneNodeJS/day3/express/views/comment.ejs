@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>评论</title>
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<script src="/javascripts/xheditor-1.1.14/jquery/jquery-1.4.4.min.js"></script>
+	<script src="/javascripts/xheditor-1.1.14/xheditor-1.1.14-zh-cn.min.js"></script>
+</head>
+<body>
+	<%- include header %>
+	<form action="/comment/submit" method="post">
+		标题 <input type="text" name="title" style="width: 500px;">
+		<br><br>
+		内容 <textarea name="content" id="content" cols="120" rows="30"></textarea>
+		<br><br>
+		<input type="submit" name="submit" value="提交">
+	</form>
+	<script>
+		pageInit()
+		function pageInit(){
+			$.extend(xheditor.settings, {shortcuts:{'ctrl+enter': submitForm}})
+			$('#content').xheditor({
+				html5Upload: false,
+				upMultiple: '1',
+				upLinkUrl: 'upload.html',
+				upLinkExt: 'zip,rar,txt',
+
+				upImgUrl: './comment/uploadImg',
+				upImgExt: 'jpg,jpeg,gif,png',
+
+				upFlashUrl: 'upload.html',
+				upFlashExt: 'swf',
+
+				upMediaUrl: 'upload.html',
+				upMediaExt: 'wmv,avi,wma,mp3,mid'
+			})
+		}
+
+		function insertUpload(arrMsg) {
+			var i, msg;
+			for(i = 0; i < arrMsg.length; i++) {
+				msg = arrMsg[i]
+				$('#uploadList').append('<option value="' + msg.id + '">' + msg.localname + '</option>')
+			}
+		}
+
+		function submitForm() {
+			$('#frmDemo').submit()
+		}
+	</script>
+</body>
+</html>

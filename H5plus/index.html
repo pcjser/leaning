@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>nativeUI系统原生界面管理</title>
+	</head>
+
+	<body>
+		<input type="button" value="actionSheet" id="btn1"/>
+		<hr />
+		<input type="button" value="alert" id="btn2"/>
+		<hr />
+		<input type="button" value="confirm " id="btn3"/>
+		<hr />
+		<script type="text/javascript">
+			document.addEventListener('plusready', function() {
+//				1、actionSheet: 弹出系统选择按钮框
+//				plus.nativeUI.actionSheet( actionsheetStyle, actionsheetCallback );
+				/*
+				说明：
+				从底部动画弹出系统样式选择按钮框，可设置选择框的标题、按钮文字等。 弹出的提示框为非阻塞模式，用户点击选择框上的按钮后关闭，并通过actionsheetCallback回调函数通知用户选择的按钮。
+				参数：
+				actionsheetStyle: ( ActionSheetStyle ) 必选 选择按钮框显示的样式
+				actionsheetCallback: ( ActionSheetCallback ) 可选 选择按钮框关闭后的回调函数
+				*/
+				var oBtn1 = document.querySelector('#btn1');
+				oBtn1.onclick = function() {
+				    plus.nativeUI.actionSheet({
+				    	title:"标题",
+				    	cancel:"取消",
+				    	buttons:[
+				    		{title:"选项一"},
+				    		{title:"选项二"}
+			    		]
+			    	}, function(e){
+				        //e.index 代表选择按钮的序列号  从1开始
+				        console.log( "User pressed: " + e.index );
+				    });
+				}
+				
+//				2、alert弹出系统提示对话框
+//				plus.nativeUI.alert( message, alertCB, title, buttonCapture );
+				/*
+				说明：
+				创建并显示系统样式提示对话框，可设置提示对话框的标题、内容、按钮文字等。 弹出的提示对话框为非阻塞模式，用户点击提示对话框上的按钮后关闭，并通过alertCB回调函数通知对话框已关闭。
+				参数：
+				message: ( String ) 必选 提示对话框上显示的内容
+				alertCB: ( AlertCallback ) 可选 提示对话框上关闭后的回调函数
+				title: ( String ) 可选 提示对话框上显示的标题
+				buttonCapture: ( String ) 必选 提示对话框上按钮显示的内容
+				*/
+				var oBtn2 = document.querySelector('#btn2');
+				oBtn2.onclick = function() {
+				    plus.nativeUI.alert('Hi', function(e){
+				        //e.index 代表选择按钮的序列号  从1开始
+				        console.log( "点击确认" );
+				    }, '标题', '确定131');
+				}
+				
+//				3、confirm 弹出系统确认对话框
+//				plus.nativeUI.confirm( message, confirmCB, title, buttons );
+				/*
+				说明：
+				创建并显示系统样式确认对话框，可设置确认对话框的标题、内容、按钮数目及其文字。 弹出的确认对话框为非阻塞模式，用户点击确认对话框上的按钮后关闭，并通过confirmCB回调函数通知用户点击的按钮索引值。
+				参数：
+				message: ( String ) 必选 确认对话框上显示的内容
+				confirmCB: ( ConfirmCallback ) 可选 确认对话框关闭后的回调函数
+				回调函数中包括Event参数，可通过其index属性（Number类型）获取用户点击按钮的索引值。
+				title: ( String ) 可选 确认对话框上显示的标题
+				buttons: ( Array[ String ] ) 可选 确认对话框上显示的按钮
+				字符串数组，每项对应在确认对话框上显示一个按钮，用户点击后通过confirmCB返回用户点击按钮的在数组中的索引值。
+				*/
+			})
+		</script>
+	</body>
+
+</html>

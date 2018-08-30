@@ -1,0 +1,123 @@
+{
+  "data": [
+    {
+      "name": "弹幕抽奖",
+      "showInMarket": 1,
+      "tag": "Lottery",
+      "version": "0.0.1",
+      "enable": 1,
+      "canBeDeleted": 0,
+      "showInMenu": 1,
+      "order": 0,
+      "setUrl": "\/app\/Lottery\/",
+      "intro": "主播用弹幕进行抽奖"
+    },
+    {
+      "name": "消息提示",
+      "showInMarket": 0,
+      "tag": "Notify",
+      "version": "0.0.1",
+      "enable": 1,
+      "canBeDeleted": 0,
+      "showInMenu": 0,
+      "order": 0,
+      "intro": "系统消息提示"
+    },
+    {
+      "name": "背景",
+      "showInMarket": 1,
+      "tag": "PC_Background",
+      "version": "0.0.1",
+      "enable": 1,
+      "canBeDeleted": 0,
+      "showInMenu": 1,
+      "order": 0,
+      "setUrl": "\/app\/PC_Background\/",
+      "intro": "主播可以更换显示背景图"
+    },
+    {
+      "name": "幕布",
+      "showInMarket": 0,
+      "tag": "PC_Curtain",
+      "version": "0.0.1",
+      "enable": 1,
+      "canBeDeleted": 0,
+      "showInMenu": 1,
+      "order": 99999,
+      "setUrl": "\/app\/PC_Curtain\/",
+      "intro": "主播可以更换显示的幕布"
+    },
+    {
+      "name": "特效",
+      "showInMarket": 1,
+      "tag": "PC_Face",
+      "version": "0.0.1",
+      "enable": 1,
+      "canBeDeleted": 0,
+      "showInMenu": 1,
+      "order": 30,
+      "setUrl": "\/app\/PC_Face\/",
+      "intro": "主播可以播放特效"
+    },
+    {
+      "name": "挂件",
+      "showInMarket": 1,
+      "tag": "PC_Pendant",
+      "version": "0.0.1",
+      "enable": 1,
+      "canBeDeleted": 0,
+      "showInMenu": 1,
+      "order": 25,
+      "setUrl": "\/app\/PC_Pendant\/",
+      "intro": "主播可以更换挂件"
+    },
+    {
+      "name": "音效",
+      "showInMarket": 1,
+      "tag": "PC_Sound",
+      "version": "0.0.1",
+      "enable": 1,
+      "canBeDeleted": 0,
+      "showInMenu": 1,
+      "order": 0,
+      "setUrl": "\/app\/PC_Sound\/",
+      "intro": "主播可以播放音效"
+    },
+    {
+      "name": "舞台",
+      "showInMarket": 0,
+      "tag": "PC_Stage",
+      "version": "0.0.1",
+      "enable": 1,
+      "canBeDeleted": 0,
+      "showInMenu": 1,
+      "order": 25,
+      "setUrl": "\/app\/PC_Stage\/",
+      "intro": "主播可以更换挂件"
+    },
+    {
+      "name": "Profiles",
+      "showInMarket": 0,
+      "tag": "Profiles",
+      "version": "0.0.1",
+      "enable": 1,
+      "canBeDeleted": 0,
+      "showInMenu": 0,
+      "order": 0,
+      "setUrl": "",
+      "intro": "性能监测应用"
+    },
+    {
+      "name": "弹幕投票",
+      "showInMarket": 1,
+      "tag": "Vote",
+      "version": "0.0.1",
+      "enable": 1,
+      "canBeDeleted": 0,
+      "showInMenu": 1,
+      "order": 0,
+      "setUrl": "\/app\/Vote\/",
+      "intro": "观众用弹幕进行投票"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sound</title>
+    <link rel="stylesheet" href="/src/stylesheets/plugin.css">
+</head>
+	
+<body>
+    <div id="soundBox" class="fix box_container">
+    	<p class="tips"><a href="https://jq.qq.com/?_wv=1027&k=46T6qwE" target="_blank">加主播Q群</a>可申请定制素材</p>
+    	<div class="container">
+			<div id="nav" class="left">
+		    	<ul>
+		    		<li class="active">音效</li>
+		    	</ul>
+	    	</div>
+	    	<div id="content" class="left">	    		 		
+		        <div class="active list_container">
+		        	<div class="type">
+		    			<p class="s_tit">风格选择：</p>
+		    			<ul>
+		    				<li class="active">游戏</li>
+		    				<li>动漫</li>
+		    				<li>风景</li>
+		    			</ul>
+		    		</div>   
+		            <ul class="fix" id="soundList">
+	    				<li data-src="/app/PC_Sound/src/voice/a.wav">激烈掌声</li>
+	    				<li data-src="/app/PC_Sound/src/voice/a.ogg">欢呼掌声</li>
+	    				<li data-src="/app/PC_Sound/src/voice/b.ogg">轻微掌声</li>
+<!-- 	    				<li>欢呼掌声</li>
+	    				<li>轻微掌声</li>
+	    				<li>欢呼掌声</li>
+	    				<li>轻微掌声</li>
+	    				<li>欢呼掌声</li>
+	    				<li>轻微掌声</li> -->
+    				</ul>
+		        </div>
+	        </div>
+    	</div>   	
+    </div>
+</body>
+<script src="/src/js/zepto.min.js"></script>
+<script src="/src/js/qwebchannel.js"></script>
+<script src="/src/js/qtcommon.js"></script>
+<script>
+	$('#soundList li').on('click', function(){
+		var soundSrc = $(this).attr('data-src');
+		var src = {"soundSrc" : soundSrc};
+		var data = {
+			"event" : "changeSound",
+			"data" : src
+		}
+		obsEvt(data)	
+		// sendSound(src)
+	});
+
+    // function sendSound(json){
+    // 	console.log(json);    	
+    //     // var data={"app":"Assistant","method":"changeFace","data":json};
+    //     // HsAppJs.runAppMethod(JSON.stringify(data));
+    // }
+</script>
+</html>

@@ -1,0 +1,84 @@
+/*数字类型*/
+$n1: 1.2;
+$n2: 12;
+$n3: 14px;
+
+p {
+	font-size: $n3;
+}
+
+
+/*字符串类型*/
+
+$s1: container;
+$s2: 'container';
+$s3: "container";
+
+.#{$s3} {
+	font-size: $n3;
+}
+
+/*Bool类型*/
+$bt: ture;
+$bf: false;
+
+/*Null类型*/
+$null: null;
+
+body {
+	@if $null == null {
+		color: red;
+	}
+}
+
+/*颜色类型*/
+$c1: blue;
+$c2: #fff;
+$c3: rgba(0,0,0,1);
+
+body {
+	color: $c2;
+}
+
+/*运算符*/
+$width1: 15px;
+$width2: 10px;
+
+span {
+	width: $width1 + $width2;
+	height: $width1 - $width2;
+}
+
+a:hover {
+	cursor: e + -resize;
+}
+
+a:before {
+	content: "A" + bc;  //结果为"Abc"
+}
+
+a:after {
+	content: A + "bc";  //结果为Abc  加号前面的类型为主
+}
+
+//加号只管前后两个运算元
+p {
+	padding: 3px + 4px auto;
+}
+
+/*字符串内引用变量*/
+$version: 3;
+p:before {
+	content: 'Hello,Sass #{$version}'; 		//#{变量名}
+}
+
+/*除法注意*/
+p {
+	font: 20px / 10px;
+	width: $width2 / 2;			//有变量自动计算 
+	width: round($width2) / 2;
+	height: 100px / 2;
+	height: (100px / 2);		//无变量  需要加（）才进行计算  结果为50px  除法档位一致   或着除数没单位  被除数有单位
+	font: (20px / 10px);		//结果为2
+}
+

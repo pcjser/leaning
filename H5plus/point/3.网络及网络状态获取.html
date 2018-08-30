@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>网络及网络状态获取</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			document.addEventListener('plusready', function() {
+//				Device模块用于获取网络信息
+//				常量：
+//				CONNECTION_UNKNOW: 网络状态常量，表示当前设备网络状态未知，固定值为0。
+//				CONNECTION_NONE: 网络状态常量，当前设备网络未连接网络，固定值为1。
+//				CONNECTION_ETHERNET: 网络状态常量，当前设备连接到有线网络，固定值为2。
+//				CONNECTION_WIFI: 网络状态常量，当前设备连接到无线WIFI网络，固定值为3。
+//				CONNECTION_CELL2G: 网络状态常量，当前设备连接到蜂窝移动2G网络，固定值为4。
+//				CONNECTION_CELL3G: 网络状态常量，当前设备连接到蜂窝移动3G网络，固定值为5。
+//				CONNECTION_CELL4G: 网络状态常量，当前设备连接到蜂窝移动4G网络，固定值为6。
+				
+//				使用getCurrentType函数获取设备当前连接的网络类型
+//				alert(plus.networkinfo.getCurrentType())
+				
+//				使用网络前建议先判断网络情况
+//				var connectionStatus = plus.networkinfo.getCurrentType();
+//			    if(connectionStatus == 0 || connectionStatus == 1){
+//			        alert('无法连接网络');
+//			    }else if(connectionStatus == 3){
+//			        alert('使用wifi');
+//			    }
+
+//				检测网络状态变化
+//				document.addEventListener("netchange", function(){
+//			        var nt = plus.networkinfo.getCurrentType();
+//			        switch ( nt ) {
+//			            case plus.networkinfo.CONNECTION_ETHERNET:
+//			            case plus.networkinfo.CONNECTION_WIFI:
+//			            alert("切换到wifi!"); 
+//			            break; 
+//			            case plus.networkinfo.CONNECTION_CELL2G:
+//			            case plus.networkinfo.CONNECTION_CELL3G:
+//			            case plus.networkinfo.CONNECTION_CELL4G:
+//			            alert("切换到4G网络!"); 
+//			            break; 
+//			            default:
+//			            alert("无网络!"); 
+//			            break;
+//			        }
+//			    }, false );
+				
+			})
+		</script>
+	</body>
+
+</html>

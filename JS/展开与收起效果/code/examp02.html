@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #ad {
+            background: #e8e8e8;
+            width: 950px;
+            padding: 5px;
+            text-align: center;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .content {
+            width: 950px;
+            margin: 0 auto;
+            padding: 10px;
+            background: gray;
+            text-align: center;
+            color: #fff;
+            z-index: 10;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="ad">
+        <h1>欢迎来到慕课网</h1>
+        <h2>大幅广告</h2>
+    </div>
+    <div class="content">
+        <p>慕课网欢迎你！</p>        
+        <p>正文</p>
+    </div>
+</body>
+    <script type="text/javascript">
+        var h = 0;
+        var i = 0;
+        var oAd =  document.querySelector("#ad")
+        function addH(){
+            i = setTimeout("addH()",30);
+            if(h < 300){
+                h += 5;
+                oAd.style.height = h + "px";
+            }else {
+                clearTimeout(i)
+            }          
+        }
+        function subH(){
+            i = setTimeout("subH()",30);
+            if(h > 0){
+                h -= 5;
+                oAd.style.height = h + "px";
+            }else {
+                clearTimeout(i);
+                oAd.style.display = "none";
+            }
+        }
+        window.onload = function(){
+            addH();
+            setTimeout("subH()",5000);
+        }
+    </script>
+</html>

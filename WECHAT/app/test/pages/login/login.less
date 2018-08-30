@@ -1,0 +1,76 @@
+.login-page {
+    .tip {
+      font-size: 22rpx;
+      color: #909090;
+      background-color: #f7f7f7;
+      align-items: center;
+      justify-content: center;
+      height: 100rpx;
+      display: flex;
+      padding: 0 20rpx;
+      line-height: 1.5;
+      margin-bottom: 26rpx;
+    }
+    .btn {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      button {
+        border: none;
+        color: #ffffff;
+        border-radius: 0;
+        background: #ec3833;
+      }
+    }
+    .nav {
+      background-color: #f7f7f7;      
+      display: flex;
+      .nav-item {
+        flex-grow: 1;
+        height: 116rpx;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30rpx;
+        color: #1b1b1b;        
+        position: relative;
+        &.active {
+          color: #ffffff;
+          background-color: #ec3833;
+          &:after {
+            content: "";
+            width: 30rpx;
+            height: 30rpx;
+            background-color: #ffffff;
+            position: absolute;
+            bottom: -16rpx;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            transform: rotate(45deg)
+          }
+        }
+      }
+    }
+    .section {      
+      padding: 0 14rpx;
+      font-size: 26rpx;
+      .input-label {
+        color: #303030;        
+        height: 60rpx;
+        display: flex;
+        align-items: center;
+        padding-left: 10rpx;
+        margin-top: 20rpx;
+      }
+      .input-box {
+        background-color: #f7f7f7;
+        padding: 0 20rpx;
+        height: 80rpx;
+        display: flex;
+        align-items: center;
+        border-radius: 8rpx;
+      }
+    }
+}

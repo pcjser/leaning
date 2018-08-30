@@ -1,0 +1,52 @@
+.record-detail-page .cover {
+  height: 420rpx;
+  width: 750rpx;
+  display: block;
+}
+.record-detail-page .info {
+  padding: 36rpx 20rpx;
+  line-height: 1;
+  font-size: 28rpx;
+  color: #999999;
+}
+.record-detail-page .info .red {
+  color: #ec3833;
+}
+.record-detail-page .info .name {
+  font-size: 32rpx;
+  color: #303030;
+  display: flex;
+  align-items: center;
+}
+.record-detail-page .info .name .vip {
+  margin-left: 20rpx;
+  display: block;
+  width: 68rpx;
+  height: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6rpx;
+  color: #ffffff;
+  background-color: #ec3833;
+  font-size: 24rpx;
+}
+.record-detail-page .info .line {
+  padding: 0 16rpx;
+  margin-top: 32rpx;
+  display: flex;
+  align-items: center;
+}
+.record-detail-page .info .line .label {
+  width: 160rpx;
+}
+.record-detail-page .info .line .add {
+  line-height: 1.5;
+}
+.record-detail-page .info .line.code {
+  display: flex;
+  justify-content: space-between;
+}
+.record-detail-page .info .line .copy {
+  color: #ec3833;
+}

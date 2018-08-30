@@ -1,0 +1,103 @@
+/* line 2, ../sass/1.scss */
+body {
+  background-color: pink;
+}
+/* line 5, ../sass/1.scss */
+body header {
+  background-color: red;
+}
+
+/* line 11, ../sass/1.scss */
+footer {
+  background-color: green;
+  background-size: 100% 50%;
+}
+
+/* line 20, ../sass/1.scss */
+a:hover {
+  color: red;
+}
+
+/* line 25, ../sass/1.scss */
+li {
+  color: #fff;
+}
+/* line 27, ../sass/1.scss */
+li.active {
+  color: #000;
+}
+
+/* line 35, ../sass/1.scss */
+.container {
+  width: 1120px;
+}
+
+@media screen and (max-width: 600px) {
+  /* line 46, ../sass/1.scss */
+  .wrap {
+    background: green;
+  }
+}
+/* line 53, ../sass/1.scss */
+body .box {
+  background: green;
+}
+
+/* line 61, ../sass/1.scss */
+.box {
+  background: green;
+}
+
+/* line 69, ../sass/1.scss */
+.all {
+  background: green;
+}
+
+/* line 81, ../sass/1.scss */
+.text-info {
+  color: red;
+}
+/* line 83, ../sass/1.scss */
+nav .text-info {
+  color: blue;
+}
+
+/* line 89, ../sass/1.scss */
+.alert, .alert-info {
+  background-color: yellow;
+}
+
+/* line 92, ../sass/1.scss */
+.small, .alert-info {
+  font-size: 12px;
+}
+
+/* line 95, ../sass/1.scss */
+.alert-info {
+  color: red;
+}
+
+/* line 102, ../sass/1.scss */
+.one, .two, .three {
+  border: 1px solid #fff;
+}
+
+/* line 105, ../sass/1.scss */
+.two, .three {
+  color: red;
+}
+
+/* line 109, ../sass/1.scss */
+.three {
+  border-radius: 5px;
+}
+
+/* line 120, ../sass/1.scss */
+a span, a div .content, div a .content {
+  font-weight: bold;
+}
+
+/* line 130, ../sass/1.scss */
+.sp {
+  color: red;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "幕布",
+  "showInMarket":0,
+  "tag": "PC_Curtain",
+  "version": "0.0.1",
+  "enable":1,
+  "canBeDeleted":0,
+  "showInMenu":1,
+  "order":99999,
+  "setUrl":"/app/PC_Curtain/",
+  "intro":"主播可以更换显示的幕布"
+}

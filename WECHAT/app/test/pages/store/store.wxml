@@ -1,0 +1,27 @@
+<wxs src="../../utils/filter.wxs" module="filter"></wxs>
+
+<view class="store-page">
+  <view class="guide">
+    <navigator url="./record/record" class="nav-item"><image class="icon" src="./images/icon_record.png"></image>兑换记录 ></navigator>
+    <navigator url="./integral/integral" class="nav-item"><image class="icon" src="./images/icon_minxi.png"></image>积分明细 ></navigator>
+  </view>
+  <view class="store-block">
+    <block wx:for="{{indexList}}" wx:for-item="map" wx:key="map-{{index}}">
+      <view class="block" wx:if="{{map.list.length > 0}}">
+        <view class="title">{{map.module_name}}<navigator url="./goods/goods" class="more">更多</navigator></view>
+        <view class="goods">
+          <block wx:for="{{map.list}}" wx:for-item="goods" wx:key="goods-{{index}}">
+            <navigator url="./gdetail/gdetail?goodsId={{goods.goods_id}}" class="goods-item">
+              <text class="vip" wx:if="{{goods.vip != 0}}">VIP{{goods.vip}}</text>
+              <image class="cover" src="https:{{filter.srcFilter(goods.goods_img)}}" />
+              <view class="goods_name">{{goods.goods_name}}</view>
+              <view class="goods_number">剩余数量：{{goods.goods_number}}</view>
+              <view class="goods_score">所需积分：<text class="red">{{goods.score}}</text></view>
+            </navigator>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+  <navigator url="../vip/task/task" class="up">赚取积分</navigator>
+</view>

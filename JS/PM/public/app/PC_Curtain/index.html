@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Curtain</title>
+    <link rel="stylesheet" href="/src/stylesheets/plugin.css">
+    <style>
+		.color {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+		}
+    </style>
+</head>
+	
+<body>
+    <div id="curtainBox" class="fix box_container">
+    	<p class="tips"><a href="https://jq.qq.com/?_wv=1027&k=46T6qwE" target="_blank">加主播Q群</a>可申请定制素材</p>
+    	<div class="container">
+			<div id="nav" class="left">
+		    	<ul>
+		    		<li class="active">幕布</li>
+		    	</ul>
+	    	</div>
+	    	<div id="content" class="left">	    		 		
+		        <div class="active list_container">
+		        	<div class="type">
+		    			<p class="s_tit">风格选择：</p>
+		    			<ul>
+		    				<li class="active" data-type="game">游戏</li>
+		    				<li data-type="cartoon">动漫</li>
+		    				<li data-type="sights">风景</li>
+		    			</ul>
+		    		</div>   
+		        	<ul class="list" id="curtainList">
+			            <li>				            	
+			            	<div class="color" style="background: #f00;" data-color="#f00"></div>
+		            		<div class="hide">
+		            			<div class="btn">使用</div>
+		            			<p class="tit">红色</p>
+		            		</div>						
+			            </li>
+			            <li>
+			            	<div class="color" style="background: #0f0;" data-color="#0f0"><div class="hide">
+		            			<div class="btn">使用</div>
+		            			<p class="tit">绿色</p>
+		            		</div>						
+			            </li>
+			            <li>
+			            	<div class="color" style="background: #00f;" data-color="#00f"><div class="hide">
+		            			<div class="btn">使用</div>
+		            			<p class="tit">蓝色</p>
+		            		</div>						
+			            </li>
+		            </ul>
+		        </div>
+	        </div>
+    	</div>   	
+    </div>
+</body>
+<script src="/src/js/zepto.min.js"></script>
+<script src="/src/js/qwebchannel.js"></script>
+<script src="/src/js/qtcommon.js"></script>
+<script>
+	$('#curtainList .hide').on('click', function(){
+		var color = $(this).prev('.color').attr('data-color');	
+		var json = {
+	        'color': color
+    	}   	
+		changeCurtain(json);
+	});
+
+    function changeCurtain(json){
+    	var data = {"app":"PC_Curtain","method":"change","data":json};
+        obsRun(data);
+    }
+
+</script>
+</html>

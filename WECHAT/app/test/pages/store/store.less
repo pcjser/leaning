@@ -1,0 +1,109 @@
+.store-page {
+  background-color: #f3f4f7;
+  padding-bottom: 120rpx;
+  .guide {
+    display: flex;
+    align-items: center;
+    padding: 30rpx 0;
+    .nav-item {
+      height: 68rpx;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30rpx;
+      &:first-child {
+        border-right: 1rpx solid #fff;
+      }
+      .icon {
+        margin-right: 24rpx;
+        width: 42rpx;
+        height: 42rpx;
+      }
+    }
+  }
+  .store-block {
+    .block {
+      margin-top: 16rpx;
+      background-color: #ffffff;
+      &:first-child {
+        margin-top: 0;
+      }
+      .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30rpx 30rpx 20rpx;
+        font-size: 30rpx;
+        color: #303030;
+        font-weight: 700;
+        .more {
+          font-weight: normal;
+          font-size: 24rpx;
+          color: #999999;
+        }
+      }
+      .goods {
+        display: flex;      
+        .goods-item {
+          width: 370rpx;
+          margin-top: 10rpx;
+          position: relative;
+          color: #999999;
+          font-size: 28rpx;
+          height: 372rpx;
+          &:nth-child(2n+1) {
+            margin-right: 10rpx;
+          }
+          .cover {
+            width: 370rpx;
+            height: 207rpx;
+            display: block;
+          }
+          .vip {
+            position: absolute;
+            width: 116rpx;
+            height: 40rpx;
+            border-radius: 0 0 14rpx 0;
+            background-color: #ec3833;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24rpx;
+          }
+          .goods_name {
+            padding: 14rpx 0 14rpx 10rpx;
+            line-height: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #303030;
+          }
+          .goods_number {
+            line-height: 1;
+            padding: 4rpx 0 4rpx 10rpx;
+          }
+          .goods_score {
+            padding: 8rpx 0 0 10rpx;
+            .red {
+              color: #ec3833;
+            }
+          }
+        }
+      }
+    }
+  }
+  .up {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 104rpx;
+    font-size: 34rpx;
+    color: #ffffff;
+    line-height: 100rpx;
+    background-color: #ec3833;
+  } 
+}

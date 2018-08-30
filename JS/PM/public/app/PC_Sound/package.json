@@ -1,0 +1,12 @@
+{
+  "name": "音效",
+  "showInMarket":1,
+  "tag": "PC_Sound",
+  "version": "0.0.1",
+  "enable":1,
+  "canBeDeleted":0,
+  "showInMenu":1,
+  "order":0,
+  "setUrl":"/app/PC_Sound/",
+  "intro":"主播可以播放音效"
+}

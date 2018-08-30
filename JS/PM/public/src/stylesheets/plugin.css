@@ -1,0 +1,267 @@
+@charset "UTF-8";
+/*reset*/
+/* line 2, ../sass/plugin.scss */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* line 8, ../sass/plugin.scss */
+body {
+  font-size: 12px;
+}
+
+/* line 11, ../sass/plugin.scss */
+ul, li {
+  list-style: none;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+/* line 16, ../sass/plugin.scss */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: transparent;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+/* line 24, ../sass/plugin.scss */
+::-webkit-scrollbar-track {
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+/*定义滑块 内阴影+圆角*/
+/* line 31, ../sass/plugin.scss */
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #dddddd;
+}
+
+/*base*/
+/* line 38, ../sass/plugin.scss */
+.left {
+  float: left;
+}
+
+/* line 41, ../sass/plugin.scss */
+.right {
+  float: right;
+}
+
+/* line 44, ../sass/plugin.scss */
+.fix {
+  *zoom: 1;
+}
+
+/* line 47, ../sass/plugin.scss */
+.fix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 52, ../sass/plugin.scss */
+.full_box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*背景*/
+/* line 61, ../sass/plugin.scss */
+.box_container {
+  background: #fcfcfc;
+  width: 680px;
+  height: 485px;
+  border: 1px solid #2e2e2e;
+}
+/* line 66, ../sass/plugin.scss */
+.box_container .tips {
+  height: 30px;
+  background: #fcf2be;
+  line-height: 30px;
+  color: #e08b3a;
+  padding-left: 20px;
+}
+/* line 72, ../sass/plugin.scss */
+.box_container .tips a {
+  color: #32abff;
+}
+/* line 76, ../sass/plugin.scss */
+.box_container .container {
+  overflow: hidden;
+  height: 453px;
+}
+/* line 79, ../sass/plugin.scss */
+.box_container .container #nav {
+  width: 88px;
+  background: #f2f2f2;
+  height: 100%;
+}
+/* line 83, ../sass/plugin.scss */
+.box_container .container #nav li {
+  height: 50px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 50px;
+  color: #666;
+}
+/* line 89, ../sass/plugin.scss */
+.box_container .container #nav li.active {
+  background: #fcfcfc;
+  color: #f6184c;
+}
+/* line 95, ../sass/plugin.scss */
+.box_container .container #content {
+  width: 590px;
+}
+/* line 97, ../sass/plugin.scss */
+.box_container .container #content .type {
+  height: 20px;
+  margin: 23px 0 25px 20px;
+  overflow: hidden;
+}
+/* line 101, ../sass/plugin.scss */
+.box_container .container #content .type .s_tit {
+  float: left;
+  width: 66px;
+  line-height: 19px;
+}
+/* line 106, ../sass/plugin.scss */
+.box_container .container #content .type ul {
+  float: left;
+}
+/* line 108, ../sass/plugin.scss */
+.box_container .container #content .type ul li {
+  float: left;
+  width: 45px;
+  height: 20px;
+  text-align: center;
+  line-height: 17px;
+  border-radius: 3px;
+  border: 1px solid #dfdfdf;
+  color: #888;
+  margin-right: 10px;
+  cursor: pointer;
+}
+/* line 119, ../sass/plugin.scss */
+.box_container .container #content .type ul li.active {
+  color: #f6184c;
+  border-color: #ff6b80;
+}
+/* line 126, ../sass/plugin.scss */
+.box_container .container #content .list_container {
+  margin-top: 2px;
+  display: none;
+  height: 448px;
+  margin-right: 2px;
+  overflow-y: scroll;
+}
+/* line 132, ../sass/plugin.scss */
+.box_container .container #content .list_container.active {
+  display: block;
+}
+/* line 137, ../sass/plugin.scss */
+.box_container .container .list {
+  font-size: 0;
+  width: 570px;
+}
+/* line 140, ../sass/plugin.scss */
+.box_container .container .list li {
+  display: inline-block;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  width: 170px;
+  height: 97px;
+  position: relative;
+  border: 1px solid #9a9a9a;
+}
+/* line 148, ../sass/plugin.scss */
+.box_container .container .list li .hide {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  color: #fff;
+  cursor: pointer;
+}
+/* line 157, ../sass/plugin.scss */
+.box_container .container .list li .hide .btn {
+  height: 30px;
+  margin: 25px auto 7px;
+  width: 75px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 30px;
+  background: #f6174f;
+  color: #fff;
+  transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+/* line 173, ../sass/plugin.scss */
+.box_container .container .list li .hide .tit {
+  font-size: 12px;
+  text-align: center;
+}
+/* line 179, ../sass/plugin.scss */
+.box_container .container .list li:hover .hide {
+  opacity: 1;
+}
+/* line 181, ../sass/plugin.scss */
+.box_container .container .list li:hover .hide .btn {
+  transform: scale(1);
+  transition: all 100ms linear;
+  -moz-transition: all 100ms linear;
+  /* Firefox 4 */
+  -webkit-transition: all 100ms linear;
+  /* Safari 和 Chrome */
+  -o-transition: all 100ms linear;
+  /* Opera */
+}
+/* line 190, ../sass/plugin.scss */
+.box_container .container .list li img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  z-index: 1;
+}
+
+/*音效*/
+/* line 203, ../sass/plugin.scss */
+#soundList {
+  width: 570px;
+}
+/* line 205, ../sass/plugin.scss */
+#soundList li {
+  float: left;
+  height: 27px;
+  width: 75px;
+  text-align: center;
+  line-height: 25px;
+  border: 1px solid #ff6b80;
+  margin: 0 0 17px 20px;
+  color: #f6184c;
+  border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+}
+/* line 217, ../sass/plugin.scss */
+#soundList li:nth-child(6n) {
+  margin-right: 0;
+}
+/* line 220, ../sass/plugin.scss */
+#soundList li span {
+  position: absolute;
+}

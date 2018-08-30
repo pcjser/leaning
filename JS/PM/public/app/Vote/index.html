@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>投票</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="/src/js/zepto.min.js"></script>
+    <script type="text/javascript" src="/src/js/qwebchannel.js"></script>
+    <script type="text/javascript" src="/src/js/qtcommon.js"></script>
+</head>
+
+<body>
+    <style>
+        *
+        {
+            margin:0;
+            padding:0;
+            font-size:12px;
+        }
+        .clearfix{overflow:auto;_height:1%}
+
+        .hidden{
+            display: none;
+        }
+        .tc{
+            text-align: center;
+        }
+        body{}
+        .notice{
+            background-color: rgb(252,242,189);
+            padding-left:20px;
+            height: 25px;
+            line-height: 25px;
+            color: rgb(221,140,21);
+        }
+        .leftBar{
+            float:left;
+            width:100px;
+            height:100%;
+            box-sizing: border-box;
+        }
+        .rightCnt{
+            float: left;
+            padding-left: 10px;
+            background-color: #fff;
+            height:100%;
+            width:calc(100% - 100px);
+            padding-top: 10px;
+            padding-bottom: 10px;
+            box-sizing: border-box;
+            min-height: 485px;
+        }
+        .menuItem{
+            height:40px;
+            line-height:40px;
+            padding-left:20px;
+            cursor: pointer;
+        }
+        .menuItem.active{
+            background-color: #fff;
+        }
+        .voteSetting{
+            float: left;
+        }
+        .votePreview{
+            float: right;
+            padding-right: 15px;
+        }
+        .formLabel
+        {
+            float: left;
+            min-width: 80px;
+            text-align: right;
+            margin-right: 10px;
+        }
+        .formLabel .require
+        {
+            color:#f00;
+        }
+        .formInput
+        {
+            float: left;
+        }
+        .inputItem{
+            border: 1px solid #ccc;
+            height: 25px;
+            line-height: 25px;
+        }
+        .formItem{
+            margin: 10px 0;
+        }
+        .inputItem.mid
+        {
+            width:200px;
+        }
+        .inputItem.small
+        {
+            width:50px;
+        }
+        .itemHelp
+        {
+            margin-top:5px;
+            color:#ccc;
+            height:20px;
+            line-height:20px;
+        }
+        .itemLine
+        {
+            margin:5px 0;
+        }
+        .itemHelp.error
+        {
+            color:#f00;
+        }
+
+        .voteHide, .voteShow, .voteStart, .voteStop, .voteAgain, .settingSave
+        {
+            width:100px;
+            height: 35px;
+            line-height: 35px;
+            border:1px solid rgb(248,140,155);
+            background-color: rgb(246,23,80);
+            border-radius:3px;
+            color: #fff;
+            font-size:15px;
+            cursor: pointer;
+        }
+        .voteHide, .voteShow, .settingSave
+        {
+            background-color: #fff;
+            color: rgb(248,140,155);
+        }
+        .actBar
+        {
+            text-align: center;
+            margin-top: 25px;
+        }
+        .margin5{
+            margin:5px;
+        }
+        #optList .del{
+            text-decoration: none;
+            color: #ccc;
+            display: none;
+        }
+        #timerType
+        {
+            text-align: center;
+            font-size: 50px;
+            margin-top: 50px;
+            color: #666;
+        }
+        #timer
+        {
+            text-align: center;
+            font-size: 50px;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+    <div class="notice">
+        目前仅支持斗鱼、熊猫、龙珠、全民、战旗、B站，<a href="tencent://groupwpa/?subcmd=all&param=7B2267726F757055696E223A3438323231353234342C2274696D655374616D70223A313438303932363439357D0A">加主播Q群</a>可申请开通你所在的平台。
+    </div>
+    <div class="loading">Loading...</div>
+    <div class="main clearfix" style="background-color: #f3f3f3;display:none">
+        <div class="leftBar">
+            <div class="menuItem active showEasy" onclick="showEasy()">默认投票</div>
+            <div class="menuItem showAdv" onclick="showAdv()">自定义投票</div>
+        </div>
+        <div class="rightCnt">
+
+            <div class="voteConfig clearfix" style="overflow: hidden;">
+                <div class="voteSetting">
+                    <div id="createEasy" class="hidden">
+                        <form id='easyForm' onsubmit="return createEasyVote()">
+                            <div class="formItem clearfix">
+                                <label class="formLabel"><span class="require">*</span>投票说明</label>
+                                <div class="formInput">
+                                    <textarea class="inputItem mid" name='cnt' required style="height: 80px;"></textarea>
+                                </div>
+                            </div>
+                            <div class="formItem clearfix">
+                                <label class="formLabel"><span class="require">*</span>关键词投票</label>
+
+                                <div class="formInput">
+                                    <input class="inputItem mid" type="text" name="kw"  required>
+                                </div>
+                            </div>
+                            <input type="hidden" name="type" value="easy">
+                            <input type="hidden" name="style" value="default">
+
+                            <div class="actBar">
+                                <!--<button type="button" onclick="hideVote()" class="voteHide">隐藏画面</button>-->
+                                <!--<button type="button" onclick="showVote()" class="voteShow hidden">显示画面</button>-->
+                                <button type="button" onclick="saveSetting('easyForm')" class="settingSave" style="margin-left: 10px;">保存</button>
+                                <button type="submit" class="voteStart" style="margin-left: 10px;">开始</button>
+
+                            </div>
+
+                        </form>
+                    </div>
+
+
+
+                    <div id='createAdv' class="hidden">
+                    <form id='advForm' onsubmit="return createAdvVote()">
+
+                        <div class="formItem clearfix">
+                            <label class="formLabel"><span class="require">*</span>投票说明</label>
+                            <div class="formInput">
+                                <textarea class="inputItem mid" name='cnt' required style="height: 80px;"></textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="formItem clearfix">
+                            <label class="formLabel">投票倒计时</label>
+
+                            <div class="formInput">
+                                <input class="inputItem small tc" type="number" name="time" value="" min="1"> 分钟
+                                <p class="itemHelp">留空则一直计时，直到手动停止。</p>
+                            </div>
+                        </div>
+
+
+                        <div class="formItem clearfix">
+                            <label class="formLabel" style="margin-top: 14px;">投票选项</label>
+
+                            <div class="formInput">
+
+                                <div id='optList'>
+
+                                </div>
+                                <p class="itemHelp">没有填写投票内容的选项不生效。</p>
+                                <p class="itemHelp error optListError"></p>
+                                <!--<p class="itemHelp"><button type="button" onclick="addOpt()">添加选项</button></p>-->
+                            </div>
+                        </div>
+
+
+
+                        <div class="formItem clearfix hidden">
+                            <label class="formLabel">显示在</label>
+
+                            <div class="formInput" style="margin-top: 2px;">
+                                <input type="radio" name="pos" value="0" checked="checked" id="showAtLeft">
+                                <label class="formLabel" for="showAtLeft" style="float: none;clear: both;">左侧</label>
+
+                                <input type="radio" name="pos" value="1" id="showAtRight">
+                                <label class="formLabel" for="showAtRight" style="float: none;clear: both;">右侧</label>
+                            </div>
+                        </div>
+
+
+
+                        <div class="actBar">
+                            <!--<button type="button" onclick="hideVote()" class="voteHide">隐藏画面</button>-->
+                            <!--<button type="button" onclick="showVote()" class="voteShow hidden">显示画面</button>-->
+                            <button type="button" onclick="saveSetting('easyForm')" class="settingSave" style="margin-left: 10px;">保存</button>
+                            <button type="submit" class="voteStart" style="margin-left: 10px;">开始</button>
+
+                        </div>
+
+                        <input type="hidden" name="type" value="adv">
+                        <input type="hidden" name="style" value="default">
+                    </form>
+                </div>
+                </div>
+                <div class="votePreview">
+                    <div style="margin-bottom: 10px;">
+                        样式选择
+                        <select onchange="changeStyle(this)">
+                            <option value="default">默认风格</option>
+                            <option value="yellow">黄色</option>
+                        </select>
+                    </div>
+                    <img id="voteStylePreview" src="images/style/default/img-vote.png">
+                </div>
+
+            </div>
+
+
+            <div class="voting hidden">
+                <div>
+                    <div id="timerType"></div>
+                    <div id="timer">00:00:00</div>
+                </div>
+                <div class="actBar">
+                    <!--<button type="button" onclick="hideVote()" class="voteHide">隐藏画面</button>-->
+                    <!--<button type="button" onclick="showVote()" class="voteShow hidden">显示画面</button>-->
+                    <button type="submit" onclick="stopVote()" class="voteStop" style="margin-left: 10px;">停止投票</button>
+                    <button type="submit" onclick="againVote()" class="voteAgain hidden" style="margin-left: 10px;">重新投票</button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+
+        var timer=null;
+        var str='';
+
+        function changeStyle(obj) {
+            var style=$(obj).val();
+            $('input[name="style"]').val(style);
+            $('#voteStylePreview').attr('src','images/style/'+style+'/img-vote.png');
+        }
+
+        function showEasy() {
+            $('.menuItem').removeClass('active');
+            $('.showEasy').addClass('active');
+            $('#createEasy').show();
+            $('#createAdv').hide();
+        }
+        function showAdv() {
+            $('.menuItem').removeClass('active');
+            $('.showAdv').addClass('active');
+            $('#createEasy').hide();
+            $('#createAdv').show();
+        }
+
+
+        function addOpt(bar)
+        {
+            var html="<div class=\"itemLine\">发弹幕<input class=\"inputItem small margin5 tc\" type=\"text\" name=\"bar\" value='"+(bar||'')+"'>投票给<input type=\"text\" class=\"inputItem small margin5 tc\" name=\"opt\"> <a class=\"del\" href=\"javascript:void(0)\">删除</a></div>";
+            $('#optList').append(html);
+        }
+
+        $('#optList').on('click',function(evt){
+            if(evt.target.className=='del') evt.target.parentElement.remove()
+        });
+
+        function getJson(id) {
+            var json=$('#'+id).serializeObject();
+            return json;
+        }
+
+        function showVote() {
+            $('.voteShow').hide();
+            $('.voteHide').show();
+            var json={"event":"ShowVote","data":{}};
+            obsEvt(json);
+        }
+        function hideVote() {
+            $('.voteShow').show();
+            $('.voteHide').hide();
+            var json={"event":"HideVote","data":{}};
+            obsEvt(json);
+        }
+        
+
+
+        function createEasyVote()
+        {
+            var data=getJson('easyForm');
+            return createVote(data);
+        }
+        function createAdvVote()
+        {
+            $('.optListError').html('');
+            var data=getJson('advForm');
+            var value='';
+            $('input[name="opt"]').each(function(key,item){
+                if(!value) value=item.value;
+            });
+            if(!value)
+            {
+                $('.optListError').html('至少填写一个投票内容');
+                return false;
+            }
+
+            return createVote(data);
+        }
+
+        function createVote(data)
+        {
+            var json={"event":"CreateVote","data":data};
+            showVote();
+            obsEvt(json);
+            go(data);
+            return false;
+        }
+
+        function go(json)
+        {
+            obsEvt({"event":"StartVote","data":{}});
+            votingStart(json);
+        }
+
+        function votingStart(data,skip) {
+            $('.voteConfig').hide();
+            $('.voting').show();
+            var time=data && data.time || 0;
+            time=parseInt(time)*60*1000;
+            var change=1000;
+            if(time)
+            {
+                $('#timerType').html('倒计时');
+            }else{
+                $('#timerType').html('投票计时');
+                change=-1000;
+            }
+            if(typeof(skip)!='undefined')
+            {
+                time=skip;
+            }
+            $('#timer').html(sec2time(time));
+
+            $('.voteAgain').hide();
+            $('.voteStop').show();
+
+            timer=setInterval((function (t) {
+                return function () {
+                    t=t-change;
+                    $('#timer').html(sec2time(t));
+                    if(t<=0)
+                    {
+                        stopVote();
+                    }
+                }
+            })(time),1000);
+        }
+        
+        function stopVote() {
+            clearInterval(timer);
+            timer=null;
+            $('.voteAgain').show();
+            $('.voteStop').hide();
+            $('#timer').html('已结束');
+            obsEvt({"event":"StopVote","data":{}});
+        }
+        
+        function againVote() {
+            $('.voteConfig').show();
+            $('.voting').hide();
+        }
+
+
+        function vote() {
+            obsEvt({"event":"barrage","data":barrage(1)});
+        }
+
+
+        showEasy();
+        for (var i=0;i++<4;)
+        {
+            addOpt(i);
+        }
+
+        function appData(json)
+        {
+            str='';
+            if(json && json.running)
+            {
+                votingStart({time:json.time},json.timeCnt);
+            }
+            $('.loading').hide();
+            $('.main').show();
+        }
+
+
+
+        if(!isQt())
+        {
+            $('.loading').hide();
+            $('.main').show();
+        }else{
+
+            obsRun({"app":"Vote","method":"getAppStatus"});
+            obsRun({"app":"PM","method":"getUserInfo"});
+        }
+
+        var saveSettings=function (type,callback) {
+            var callback=function (data) {
+                console.log(data);
+            };
+            var settings=getJson(type);
+            getUserToken(function (token) {
+                if(!token)return;
+                $.ajax({
+                    type:"POST",
+                    url:"http://heyad.tv/myapps/scenes/option/save",
+                    data:{
+                        'token':token,
+                        'user_appid':GetQueryString('id'),
+                        'app_options':toString(settings)
+                    },
+                    success:function (data) {
+                        callback && callback(data);
+                    }
+                });
+            });
+        };
+        var getSettings=function (callback) {
+
+            var callback=function (data) {
+                console.log(data);
+            };
+
+            getUserToken(function (token) {
+                if(!token)return;
+                $.ajax({
+                    type:"GET",
+                    url:"http://heyad.tv/myapps/scenes/option/list",
+                    data:{
+                        'token':token,
+                        'user_appid':GetQueryString('id')
+                    },
+                    success:function (data) {
+                        callback && callback(data);
+                    }
+                });
+            });
+
+        };
+        var delSettings=function (appId,optionId) {
+            var user=PM.getUser();
+            if(!user)return [];
+            network.ajax({
+                type:"POST",
+                url:"http://heyad.tv/myapps/scenes/option/delete",
+                data:{
+                    'token':user.token,
+                    'app_id':appId,
+                    'option_id':optionId
+                },
+                success:function (data) {
+                    return [];
+                }
+            });
+        };
+
+
+        $(document).on("keypress","body",function(evt) {
+            str+=String.fromCharCode(evt.which);
+            if(str.length==7 && str=='barrage')
+            {
+                location.href='/barrage.html';
+            }
+        });
+        getSettings();
+    </script>
+
+</body>
+</html>

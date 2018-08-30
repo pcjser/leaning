@@ -1,0 +1,59 @@
+<wxs src="../../../utils/filter.wxs" module="filter"></wxs>
+<view class="game-detail-page">
+  <view class="game-info">
+    <view class="background" style="background-image: url({{gameInfo.banner}})"></view>
+    <view class="info">
+      <image class="cover" src="https:{{filter.srcFilter(gameInfo.cover)}}" />
+      <text class="name">{{gameInfo.name}}</text>
+      <view class="tag-wrap">
+        <block wx:for="{{filter.strToArr(gameInfo.theme, ',')}}" wx:for-item="tag" wx:key="tag-{{tag}}">
+          <text class="tag">{{tag}}</text>
+        </block>
+      </view>
+    </view>
+  </view>
+  <view class="banner">
+    <scroll-view class="banner-wrap" scroll-x="true">
+      <block wx:for="{{filter.strToArr(gameInfo.images, ',')}}" wx:for-item="img" wx:key="banner-{{index}}">
+        <image class="image" src="https:{{filter.srcFilter(img)}}" /> 
+      </block>
+    </scroll-view>
+  </view>
+  <view class="info-block">
+    <view class="title">游戏简介</view>
+    <view class="text">
+      {{showDesc}}
+      <view wx:if="{{hasMore}}" class="show-more" bindtap="showMoreTap">显示全部</view>
+    </view>
+  </view>
+  <view class="info-block" wx:if="{{topicList.length > 0}}">
+    <view class="title" style="margin-bottom: 22rpx;">热门话题</view>
+    <view class="topic">
+      <scroll-view class="topic-wrap" scroll-x="true">
+        <block wx:for="{{topicList}}" wx:key="topic-{{index}}">
+          <view class="topic-item">
+            <image class="topic-image" src="https:{{filter.srcFilter(filter.strToArr(item.picurl)[0])}}" />
+            <view class="topic-title">{{item.title}}</view>
+          </view>
+        </block>
+        <view wx:if="{{false}}" class="topic-item">
+          <image class="topic-image" src="../images/go-bbs.png" />
+          <view class="topic-title">进入{{gameInfo.name}}社区</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="info-block" wx:if="{{giftList.length > 0}}">
+    <view class="title">游戏礼包</view>
+    <view class="gift">
+      <block wx:for="{{giftList}}" wx:for-item="gift" wx:key="gift-{{index}}">
+        <view class="gift-item">
+          <view class="gift-name">{{gift.name}}</view>
+          <view class="gift-content">{{gift.gift}}</view>
+          <view wx:if="{{false}}" class="get-button" bindtap="getGiftTap">领取</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="download" bindtap="downloadTap" wx:if="{{false}}"><image class="icon" src="../images/ic_download.png" />立即下载<text class="size">({{gameInfo.filesize}}MB)</text></view>
+</view>

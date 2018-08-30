@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>皮肤切换演示</title>
+	<link rel="stylesheet" href="stylesheets/index.css">
+	<link rel="stylesheet" id="skin1" href="stylesheets/skin1.css">
+	<link rel="stylesheet" id="skin2" href="stylesheets/skin2.css" disabled>
+</head>
+<body>
+	<header>
+		<div id="logo">
+			<img src="images/logo.jpg" alt="logo">
+		</div>
+		<nav>
+			<a href="">Menu1</a><span>|</span>
+			<a href="">Menu2</a><span>|</span>
+			<a href="">Menu3</a><span>|</span>	
+		</nav>
+		<div class="skin">
+			<select name="" id="select_skin">
+				<option value="skin1">皮肤1</option>
+				<option value="skin2">皮肤2</option>
+			</select>
+		</div>
+	</header>
+	<section class="container"></section>
+	<footer>&copy;Copyright</footer>
+</body>
+<script>
+	var selectSkin = document.getElementById('select_skin');
+	selectSkin.addEventListener('change', function(e){
+		var target = e.target;
+		var skinValue = target.value;
+
+		var links = document.getElementsByTagName('link');
+		for(var i = 0, len = links.length; i < len; i++) {
+			if(links[i].id) {
+				links[i].disabled = (links[i].id !== skinValue)
+			}
+		}
+	})
+</script>
+</html>

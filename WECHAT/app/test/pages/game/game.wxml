@@ -1,0 +1,25 @@
+<wxs src="../../utils/filter.wxs" module="filter" />
+<view class="game-page">
+  <loading wx:if="{{!init}}">加载中...</loading>
+  <scroll-view wx:if="{{init && gameList.length > 0}}" class="container" scroll-y bindscrolltolower="loadmore">
+    <block wx:for="{{gameList}}" wx:for-item="game" wx:key="game-{{game.name}}">
+      <navigator class="game-item" url="./detail/detail?gameId={{game.id}}">
+        <image class="game-cover" src="https:{{filter.srcFilter(game.cover)}}" />
+        <view class="game-info">
+          <view class="name">{{game.name}}</view>
+          <view class="desc">{{game.word}}</view>
+          <view class="tag-wrap">
+            <block wx:for="{{filter.strToArr(game.theme, ',')}}" wx:for-item="tag" wx:key="tag-{{tag}}">
+              <text class="tag">{{tag}}</text>
+            </block>
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <view class="no-more" wx:if="{{!hasMore}}">暂无更多数据</view>
+  </scroll-view>
+  <view wx:else class="no-data">
+    <image class="no-data-img" src="../../assets/no_data.png" />
+    <view class="no-data-text">暂无数据</view>
+  </view>
+</view>

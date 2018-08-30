@@ -1,0 +1,41 @@
+var srcFilter = function (src) {
+  if (src) {
+    return src.replace('https://', '//').replace('http://', '//')
+  }
+}
+
+var strToArr = function (str, symbol) {
+  if (str) {
+    return str.split(symbol)
+  }
+}
+
+var orderStatusFilter = function (status) {
+  if (status) {
+    switch (status) {
+      case 0:
+        status = '未兑换';
+        break;
+      case 1:
+        status = '已兑换';
+        break;
+      case 2:
+        status = '已完成';
+        break
+    }
+    return status
+  }
+}
+
+var mobileFilter = function(mobile) {
+  if(mobile) {
+    return mobile.substring(0, 3) + '****' + mobile.substring(7, 11);
+  }
+}
+
+module.exports = {
+  srcFilter: srcFilter,
+  strToArr: strToArr,
+  orderStatusFilter: orderStatusFilter,
+  mobileFilter: mobileFilter
+}

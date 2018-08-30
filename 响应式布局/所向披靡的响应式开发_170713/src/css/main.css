@@ -1,0 +1,896 @@
+@charset "UTF-8";
+/*************
+ * 页面样式
+ ************/
+/* ============
+   基本默认值
+   ============ */
+/* line 9, ../sass/main.scss */
+html {
+  font-size: 62.5%;
+  /*默认16px*/
+  color: #222;
+}
+
+/* line 14, ../sass/main.scss */
+::selection {
+  background-color: #b3d4fc;
+  text-shadow: none;
+}
+
+/* line 19, ../sass/main.scss */
+ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 22, ../sass/main.scss */
+ul li {
+  list-style: none;
+}
+
+/* ============
+   工具样式
+   ============ */
+/* line 30, ../sass/main.scss */
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* line 36, ../sass/main.scss */
+.pull-right {
+  float: right !important;
+}
+
+/* line 40, ../sass/main.scss */
+.pull-left {
+  float: left !important;
+}
+
+/* line 44, ../sass/main.scss */
+.text-right {
+  text-align: right !important;
+}
+
+/* line 48, ../sass/main.scss */
+.text-left {
+  text-align: left !important;
+}
+
+/* line 52, ../sass/main.scss */
+.text-center {
+  text-align: center !important;
+}
+
+/* line 56, ../sass/main.scss */
+.hide {
+  display: none !important;
+}
+
+/* line 60, ../sass/main.scss */
+.show {
+  display: block !important;
+}
+
+/* line 64, ../sass/main.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* line 68, ../sass/main.scss */
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+/* line 76, ../sass/main.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+/* line 82, ../sass/main.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 86, ../sass/main.scss */
+.browserupgrade {
+  margin: 0;
+  padding: 1rem;
+  background: #ccc;
+}
+
+/* =================
+   自定义页面样式
+   ================= */
+/* line 96, ../sass/main.scss */
+body {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  background-color: #f7f7f7;
+}
+
+/* line 102, ../sass/main.scss */
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+/* line 107, ../sass/main.scss */
+a:hover, a:active {
+  color: #0ae;
+  text-decoration: underline;
+}
+
+/* 网站头部 */
+/* line 114, ../sass/main.scss */
+header {
+  width: 100%;
+}
+/* line 116, ../sass/main.scss */
+header .top {
+  line-height: 3rem;
+  padding: 0 1.5rem;
+  color: #fff;
+  background: #555;
+  border-bottom: 1px solid #ecc000;
+}
+/* line 122, ../sass/main.scss */
+header .top .tel {
+  float: left;
+}
+/* line 125, ../sass/main.scss */
+header .top ul {
+  text-align: right;
+}
+/* line 127, ../sass/main.scss */
+header .top ul li {
+  display: inline-block;
+}
+/* line 129, ../sass/main.scss */
+header .top ul li + li {
+  border-left: 1px solid #999;
+  margin-left: -3px;
+}
+/* line 133, ../sass/main.scss */
+header .top ul li a {
+  display: inline-block;
+  padding: 0 1.5rem;
+  color: #fff;
+}
+/* line 141, ../sass/main.scss */
+header .main {
+  padding: 0;
+}
+/* line 143, ../sass/main.scss */
+header .main .brand {
+  float: left;
+  padding: 1rem 1.5rem;
+}
+/* line 147, ../sass/main.scss */
+header .main ul {
+  text-align: right;
+}
+/* line 149, ../sass/main.scss */
+header .main ul li {
+  display: inline-block;
+  border-left: 1px solid #f0ede9;
+}
+/* line 152, ../sass/main.scss */
+header .main ul li a {
+  display: inline-block;
+  padding: 0 2.5rem;
+  line-height: 5.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #7c7a65;
+  text-decoration: none;
+}
+/* line 160, ../sass/main.scss */
+header .main ul li a:hover, header .main ul li a:active {
+  color: #ffb300;
+  background-color: #f8f6f1;
+}
+
+@media only screen and (max-width: 50em) {
+  /* line 173, ../sass/main.scss */
+  header .top ul li a {
+    padding: 0 1rem;
+  }
+  /* line 178, ../sass/main.scss */
+  header .main .brand {
+    float: none;
+    display: block;
+    padding: 0;
+    margin: 1.5rem auto 0.5rem;
+    text-align: center;
+  }
+  /* line 185, ../sass/main.scss */
+  header .main ul {
+    text-align: center;
+  }
+  /* line 187, ../sass/main.scss */
+  header .main ul li {
+    border: none;
+  }
+  /* line 189, ../sass/main.scss */
+  header .main ul li a {
+    padding: 0 1.4rem;
+  }
+}
+@media only screen and (max-width: 30em) {
+  /* line 201, ../sass/main.scss */
+  header .top .tel {
+    display: none;
+  }
+  /* line 205, ../sass/main.scss */
+  header .top ul li:nth-child(3), header .top ul li:nth-child(4) {
+    display: none;
+  }
+  /* line 212, ../sass/main.scss */
+  header .main ul li {
+    line-height: 3rem;
+  }
+  /* line 214, ../sass/main.scss */
+  header .main ul li:first-child {
+    display: none;
+  }
+  /* line 217, ../sass/main.scss */
+  header .main ul li a {
+    font-weight: normal;
+    padding: 0 0.5rem;
+  }
+}
+/* 网站主要内容 */
+/* line 229, ../sass/main.scss */
+.container {
+  width: 100%;
+}
+
+/* 交易信息 */
+/* line 235, ../sass/main.scss */
+.transaction {
+  width: 100%;
+  background-color: #7c7365;
+}
+
+/* line 240, ../sass/main.scss */
+.trans-content {
+  max-width: 90%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+/* line 244, ../sass/main.scss */
+.trans-content .trans-data {
+  float: left;
+  padding: 1rem;
+  text-align: left;
+}
+/* line 248, ../sass/main.scss */
+.trans-content .trans-data span {
+  display: inline-block;
+  line-height: 3rem;
+  color: #fff;
+}
+/* line 252, ../sass/main.scss */
+.trans-content .trans-data span.trans-money {
+  font-size: 2.2rem;
+  color: #ff9900;
+  letter-spacing: 3px;
+  margin: 0 1rem;
+  padding: 0 1rem;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 1px 2px #333 inset;
+}
+/* line 265, ../sass/main.scss */
+.trans-content .trans-report {
+  float: right;
+}
+/* line 267, ../sass/main.scss */
+.trans-content .trans-report a {
+  display: inline-block;
+  padding: 1rem;
+  line-height: 3rem;
+  color: #fff;
+}
+
+@media only screen and (max-width: 50em) {
+  /* line 278, ../sass/main.scss */
+  .trans-content .trans-data {
+    padding: 1rem 0.2rem;
+  }
+  /* line 280, ../sass/main.scss */
+  .trans-content .trans-data span {
+    font-size: 1.2rem;
+  }
+  /* line 282, ../sass/main.scss */
+  .trans-content .trans-data span.trans-money {
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+    letter-spacing: inherit;
+    box-shadow: none;
+    background: transparent;
+  }
+  /* line 293, ../sass/main.scss */
+  .trans-content .trans-report a {
+    padding: 1rem 0;
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 30em) {
+  /* line 302, ../sass/main.scss */
+  .trans-content {
+    padding: 0.5rem 0;
+  }
+  /* line 304, ../sass/main.scss */
+  .trans-content .trans-data, .trans-content .trans-report {
+    float: none;
+    text-align: center;
+    padding: 0;
+  }
+  /* line 308, ../sass/main.scss */
+  .trans-content .trans-data a, .trans-content .trans-report a {
+    padding: 0;
+  }
+}
+/* 滚动广告 */
+/* 平台特点 */
+/* line 323, ../sass/main.scss */
+.feature {
+  width: 90%;
+  margin: 2rem auto;
+  font-size: 0;
+}
+/* line 327, ../sass/main.scss */
+.feature .item {
+  display: inline-block;
+  width: calc(33.333333% - 3rem);
+  padding: 1rem;
+  font-size: 1.4rem;
+  background-color: #fff;
+  box-shadow: 0 0 4px #ccc;
+}
+/* line 334, ../sass/main.scss */
+.feature .item + .item {
+  margin-left: 1.5rem;
+}
+/* line 337, ../sass/main.scss */
+.feature .item h3 {
+  display: inline-block;
+  width: 40%;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  font-size: 3.3rem;
+  text-align: center;
+  color: #ff9900;
+}
+/* line 347, ../sass/main.scss */
+.feature .item p {
+  display: inline-block;
+  width: 55%;
+  margin: 0;
+  padding: 0;
+  color: #999;
+}
+
+@media only screen and (min-width: 30.0625em) and (max-width: 50em) {
+  /* line 364, ../sass/main.scss */
+  .feature .item h3, .feature .item p {
+    display: block;
+    width: 100%;
+    font-size: 2.6rem;
+    text-align: center;
+  }
+  /* line 370, ../sass/main.scss */
+  .feature .item p {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 30em) {
+  /* line 378, ../sass/main.scss */
+  .feature {
+    width: 96%;
+    margin: 1rem auto;
+  }
+  /* line 381, ../sass/main.scss */
+  .feature .item {
+    display: block;
+    width: auto;
+  }
+  /* line 384, ../sass/main.scss */
+  .feature .item + .item {
+    margin: 1rem 0 0;
+  }
+}
+/* 最新公告 */
+/* line 393, ../sass/main.scss */
+.notice {
+  width: 90%;
+  margin: 2rem auto;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  background-color: #fff;
+  box-shadow: 0 0 4px #ccc;
+}
+/* line 400, ../sass/main.scss */
+.notice a {
+  float: left;
+  display: inline-block;
+  width: 70%;
+  margin-left: 2rem;
+  text-decoration: none;
+}
+/* line 406, ../sass/main.scss */
+.notice a:first-child {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* line 410, ../sass/main.scss */
+.notice a:first-child:before {
+  content: '最新公告：\00a0\00a0';
+  color: #aaa;
+}
+/* line 415, ../sass/main.scss */
+.notice a span {
+  color: #999;
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+/* line 420, ../sass/main.scss */
+.notice a.more {
+  float: right;
+  width: auto;
+  margin-right: 2rem;
+  color: #ff9900;
+}
+
+@media only screen and (max-width: 30em) {
+  /* line 430, ../sass/main.scss */
+  .notice {
+    width: 96%;
+    margin: 1rem auto;
+    font-size: 1.2rem;
+  }
+  /* line 434, ../sass/main.scss */
+  .notice a {
+    margin-left: 1rem;
+  }
+  /* line 436, ../sass/main.scss */
+  .notice a span {
+    display: none;
+  }
+  /* line 439, ../sass/main.scss */
+  .notice a.more {
+    margin-right: 1rem;
+  }
+}
+/* 产品列表 */
+/* line 448, ../sass/main.scss */
+.product {
+  width: 90%;
+  margin: 2rem auto;
+  font-size: 1.4rem;
+  background-color: #f5f9fa;
+  border-top: 2px solid #ff9900;
+  box-shadow: 0 0 4px #ccc;
+}
+/* line 455, ../sass/main.scss */
+.product h2 {
+  float: left;
+  width: 20%;
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: normal;
+  color: #635c51;
+}
+/* line 463, ../sass/main.scss */
+.product h2 em {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+/* line 467, ../sass/main.scss */
+.product h2 em:first-child {
+  margin-top: 4rem;
+}
+/* line 472, ../sass/main.scss */
+.product .product-content {
+  float: right;
+  width: 79.5%;
+  border-left: 1px solid #eee;
+  background-color: #fff;
+}
+/* line 477, ../sass/main.scss */
+.product .product-content .item {
+  width: 100%;
+}
+/* line 479, ../sass/main.scss */
+.product .product-content .item + .item {
+  border-top: 1px solid #eee;
+}
+/* line 482, ../sass/main.scss */
+.product .product-content .item h3 {
+  float: left;
+  width: 30%;
+  margin: 1.5rem 0;
+  font-size: 1.4rem;
+  font-weight: normal;
+  text-align: center;
+}
+/* line 489, ../sass/main.scss */
+.product .product-content .item h3 em {
+  margin-right: 0.5rem;
+  font-size: 3.6rem;
+  font-style: normal;
+  color: #8b999d;
+}
+/* line 495, ../sass/main.scss */
+.product .product-content .item h3 i {
+  display: block;
+  font-size: 1.2rem;
+  font-style: normal;
+  color: #999;
+}
+/* line 502, ../sass/main.scss */
+.product .product-content .item .info {
+  float: left;
+  width: 48%;
+  padding: 1rem;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  font-size: 14px;
+}
+/* line 509, ../sass/main.scss */
+.product .product-content .item .info p {
+  float: left;
+  display: inline-block;
+  text-align: center;
+  width: 50%;
+}
+/* line 514, ../sass/main.scss */
+.product .product-content .item .info p span {
+  display: block;
+  font-size: 2.4rem;
+  color: #ff9900;
+}
+/* line 518, ../sass/main.scss */
+.product .product-content .item .info p span i {
+  font-size: 1.2rem;
+  font-style: normal;
+  color: #999;
+}
+/* line 526, ../sass/main.scss */
+.product .product-content .item .buy {
+  float: left;
+  width: calc(22% - 4.4rem);
+  padding: 1rem;
+}
+/* line 530, ../sass/main.scss */
+.product .product-content .item .buy a {
+  display: block;
+  width: 90%;
+  margin: 1.5rem auto;
+  max-width: 12rem;
+  line-height: 4rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #f90;
+  border-radius: 5px;
+}
+/* line 541, ../sass/main.scss */
+.product .product-content .item .buy a:hover, .product .product-content .item .buy a:active {
+  background-color: #ffc468;
+}
+/* line 544, ../sass/main.scss */
+.product .product-content .item .buy a.disabled {
+  background-color: #ccc !important;
+  cursor: not-allowed;
+}
+
+@media only screen and (max-width: 50em) {
+  /* line 556, ../sass/main.scss */
+  .product h2 {
+    float: none;
+    width: 100%;
+    margin-top: 2rem;
+    font-size: 2.2rem;
+  }
+  /* line 561, ../sass/main.scss */
+  .product h2 em {
+    display: inline;
+    font-size: 1.2rem;
+  }
+  /* line 564, ../sass/main.scss */
+  .product h2 em:first-child {
+    margin-top: 0;
+  }
+  /* line 569, ../sass/main.scss */
+  .product .product-content {
+    float: none;
+    width: 100%;
+  }
+  /* line 573, ../sass/main.scss */
+  .product .product-content .item h3 {
+    margin-bottom: 0;
+  }
+  /* line 575, ../sass/main.scss */
+  .product .product-content .item h3 em {
+    font-size: 2.4rem;
+  }
+  /* line 579, ../sass/main.scss */
+  .product .product-content .item .info {
+    padding: 1rem 1rem 0;
+    font-size: 1.2rem;
+  }
+  /* line 582, ../sass/main.scss */
+  .product .product-content .item .info p span {
+    font-size: 2rem;
+  }
+  /* line 586, ../sass/main.scss */
+  .product .product-content .item .buy a {
+    margin: 0.5rem auto;
+  }
+}
+@media only screen and (max-width: 30em) {
+  /* line 596, ../sass/main.scss */
+  .product h2 em:first-child:before {
+    content: " ";
+    display: table;
+  }
+  /* line 602, ../sass/main.scss */
+  .product .product-content .item h3 em {
+    font-size: 2rem;
+    margin-right: 0;
+  }
+  /* line 606, ../sass/main.scss */
+  .product .product-content .item .info {
+    float: right;
+    width: 70%;
+    padding: 1rem 0;
+    border: none;
+  }
+  /* line 611, ../sass/main.scss */
+  .product .product-content .item .info p span {
+    font-size: 1.8rem;
+  }
+  /* line 615, ../sass/main.scss */
+  .product .product-content .item .buy {
+    clear: both;
+    float: none;
+    width: 100%;
+    padding: 1rem 0 2rem;
+  }
+  /* line 620, ../sass/main.scss */
+  .product .product-content .item .buy a {
+    margin-top: 0;
+    max-width: 26rem;
+  }
+}
+/* 底部导航 */
+/* line 632, ../sass/main.scss */
+.link {
+  padding: 3rem 0;
+  background-color: #fff;
+  border-top: 2px solid #eee;
+}
+
+/* line 638, ../sass/main.scss */
+.link-content {
+  width: 90%;
+  margin: 0 auto;
+}
+/* line 641, ../sass/main.scss */
+.link-content .brand {
+  float: left;
+  display: block;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  width: 20%;
+  height: 35px;
+  background: url(../img/logo@1x.png) no-repeat;
+  background-size: 150px 35px;
+}
+/* line 651, ../sass/main.scss */
+.link-content ul {
+  float: left;
+  width: 15%;
+}
+/* line 654, ../sass/main.scss */
+.link-content ul li {
+  font: 1.4rem;
+  line-height: 2.4rem;
+}
+/* line 657, ../sass/main.scss */
+.link-content ul li.title {
+  font-size: 1.6rem;
+  line-height: 3rem;
+}
+
+@media only screen and (max-width: 50em) {
+  /* line 667, ../sass/main.scss */
+  .link-content .brand {
+    display: none;
+  }
+  /* line 670, ../sass/main.scss */
+  .link-content ul {
+    width: 20%;
+  }
+  /* line 672, ../sass/main.scss */
+  .link-content ul li {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+  /* line 675, ../sass/main.scss */
+  .link-content ul li.title {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+  }
+}
+@media only screen and (max-width: 30em) {
+  /* line 685, ../sass/main.scss */
+  .link-content {
+    width: 98%;
+  }
+  /* line 687, ../sass/main.scss */
+  .link-content ul li.title {
+    font-size: 1.2rem;
+    line-height: 2rem;
+  }
+}
+/* 底部cp */
+/* line 696, ../sass/main.scss */
+footer {
+  width: 100%;
+  padding: 3rem 0 5rem;
+  background-color: #ededed;
+}
+/* line 700, ../sass/main.scss */
+footer ul {
+  text-align: center;
+}
+/* line 702, ../sass/main.scss */
+footer ul li {
+  display: inline-block;
+}
+/* line 704, ../sass/main.scss */
+footer ul li .icon {
+  display: inline-block;
+  text-indent: -999rem;
+  margin-right: 1.5rem;
+  background: url(../img/cert1.png) no-repeat;
+  background-size: 466px 447px;
+  overflow: hidden;
+}
+/* line 711, ../sass/main.scss */
+footer ul li .icon.icon-zfywxk {
+  width: 38px;
+  height: 27px;
+  background-position: -369px -45px;
+}
+/* line 716, ../sass/main.scss */
+footer ul li .icon.icon-pcirk {
+  width: 78px;
+  height: 27px;
+  background-position: -110px -96px;
+}
+/* line 721, ../sass/main.scss */
+footer ul li .icon.icon-visayz {
+  width: 36px;
+  height: 27px;
+  background-position: -426px -90px;
+}
+/* line 726, ../sass/main.scss */
+footer ul li .icon.icon-vsjmfw {
+  width: 63px;
+  height: 27px;
+  margin-right: 13px;
+  background-position: -401px -186px;
+}
+/* line 732, ../sass/main.scss */
+footer ul li .icon.icon-wlgs {
+  width: 22px;
+  height: 27px;
+  background-position: -48px -48px;
+}
+/* line 737, ../sass/main.scss */
+footer ul li .icon.icon-rzcx {
+  width: 75px;
+  height: 27px;
+  background-position: 0 -320px;
+}
+/* line 742, ../sass/main.scss */
+footer ul li .icon.icon-gs {
+  width: 30px;
+  height: 30px;
+  margin-right: 0;
+  background: url(../img/cert2.png) no-repeat;
+  background-size: 30px;
+}
+/* line 752, ../sass/main.scss */
+footer p {
+  text-align: center;
+  color: #999;
+}
+
+/* =============
+   打印样式
+   ============= */
+@media print {
+  /* line 762, ../sass/main.scss */
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* line 771, ../sass/main.scss */
+  a, a:visited {
+    text-decoration: underline;
+  }
+
+  /* line 775, ../sass/main.scss */
+  a[href]:after {
+    content: "（" attr(href) "）";
+  }
+
+  /* line 779, ../sass/main.scss */
+  a[title]:after {
+    content: "（" attr(title) "）";
+  }
+
+  /*
+   * 使用#和javascript的超链接不打印href
+   */
+  /* line 786, ../sass/main.scss */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  /* line 791, ../sass/main.scss */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /* line 796, ../sass/main.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* line 800, ../sass/main.scss */
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  /* line 804, ../sass/main.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  /* line 808, ../sass/main.scss */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 813, ../sass/main.scss */
+  h2, h3 {
+    page-break-inside: avoid;
+  }
+}

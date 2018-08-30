@@ -1,0 +1,181 @@
+.game-detail-page {
+  // padding-bottom: 140rpx;
+  padding-bottom: 30rpx;
+  .game-info {
+    height: 360rpx;
+    position: relative;
+    .background {
+      position: absolute;
+      width: 750rpx;
+      height: 290rpx;
+      background-repeat: no-repeat;
+      background-size: 750rpx 290rpx;
+      background-position: center center;
+      opacity: .7;
+    }
+    .info {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      overflow: hidden;
+      .cover {       
+        width: 152rpx;
+        height: 152rpx;
+        display: block;
+        margin: 56rpx auto 16rpx;        
+      }
+      .name {
+        font-size: 50rpx;
+        color: #303030;
+        font-weight: 700;
+        margin-top: 20rpx;
+      }
+      .tag-wrap {
+        margin-top: 16rpx;
+        display: flex;
+        justify-content: center;
+        .tag {
+          font-size: 22rpx;
+          padding: 2rpx 14rpx 4rpx;
+          margin: 0 8rpx;
+          background: #ebecef;
+          color: #666;
+          border-radius: 24rpx;
+        }
+      }
+    }    
+  }
+  .banner {
+    height: 500rpx;
+    overflow-x: auto;
+    margin: 30rpx 0;
+    .banner-wrap {
+      font-size: 0;      
+      white-space: nowrap;
+      display: flex;
+      flex-direction: column;
+      .image {
+        width: 300rpx;
+        height: 500rpx;
+        margin-right: 20rpx;
+        &:first-child {
+          margin-left: 20rpx;
+        }
+      }
+    }
+  }
+  .info-block {
+    color: #303030;
+    .title {
+      margin-left: 32rpx;      
+      font-weight: 700;
+      font-size: 34rpx;
+      border-top: 1rpx solid #efefef;
+      padding-top: 30rpx;
+      margin-bottom: 16rpx;
+    }
+    .text {
+      font-size: 28rpx;
+      line-height: 1.5;
+      padding: 0 32rpx;
+      position: relative;
+      margin-bottom: 28rpx;
+      .show-more {
+        line-height: 1.5;
+        float: right;
+        color: #00c806;
+      }
+    }
+    .topic {
+      overflow-x: auto;
+      margin-bottom: 30rpx;
+      .topic-wrap {
+        font-size: 0;      
+        white-space: nowrap;
+        display: flex;
+        flex-direction: column;
+        .topic-item {
+          width: 540rpx;
+          margin-right: 20rpx;
+          display: inline-block;
+          &:first-child {
+            margin-left: 32rpx;
+          }
+          &:last-child {
+            margin-right: 32rpx;
+          }
+          .topic-image {
+            border-radius: 20rpx;
+            width: 540rpx;
+            height: 236rpx;
+          }
+          .topic-title {
+            font-size: 28rpx;
+            color: #303030;
+            text-align: center;
+            margin-top: 16rpx;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+    .gift {
+      .gift-item {
+        margin-left: 32rpx; 
+        width: 504rpx;
+        position: relative;
+        margin-bottom: 32rpx;
+        .gift-name {
+          color: #303030;
+          font-size: 32rpx;
+          padding-bottom: 8rpx;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .gift-content {
+          font-size: 28rpx;
+          color: #999999;
+          line-height: 1.7;
+        }
+        .get-button {
+          position: absolute;
+          right: -180rpx;
+          background-color: #00c806;
+          text-align: center;
+          width: 124rpx;
+          padding: 20rpx 0;
+          font-size: 28rpx;
+          color: #ffffff;
+          border-radius: 10rpx;
+          transform: translateY(-50%);
+          top: 50%;
+        }
+      }
+    }
+  }
+  .download {
+    position: fixed;
+    bottom: 0;
+    background: linear-gradient(90deg,#00df73,#00c806);
+    right: 0;
+    left: 0;
+    height: 104rpx;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .icon {
+      width: 30rpx;
+      height: 33rpx;
+      margin-right: 20rpx;
+    }
+    .size {
+      padding-top: 10rpx;
+      font-size: 24rpx;
+      margin-left: 12rpx;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/*********内置函数*****************/
+/*rgb() rgba()  函数*/
+/* line 3, ../sass/function.scss */
+body {
+  color: #ff7b00;
+  background: rgba(255, 0, 0, 0.5);
+  /*等同于*/
+  color: #ff7b00;
+  background: rgba(255, 123, 0, 0.5);
+  /*darken 颜色加深  lighten 颜色变浅*/
+  /*str-length()  函数 返回字符串长度*/
+  /*str-index()  返回字符所在下标   从1开始计*/
+}
+/* line 12, ../sass/function.scss */
+body p {
+  color: #fc7a00;
+  background: #ff7c03;
+}
+/* line 18, ../sass/function.scss */
+body p {
+  z-index: 6;
+}
+/* line 23, ../sass/function.scss */
+body p {
+  z-index: 3;
+}
+
+/*********自定义函数***************/
+/* line 33, ../sass/function.scss */
+p {
+  width: 10px;
+}

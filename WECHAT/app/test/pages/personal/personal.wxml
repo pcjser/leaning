@@ -1,0 +1,25 @@
+<wxs src="../../utils/filter.wxs" module="filter"></wxs>
+<view class="personal-page">
+  <view class="info">
+    <image class="avatar" src="https:{{filter.srcFilter(personalInfo.avatar)}}" />
+    <text class="nickname">{{personalInfo.username}}</text>
+    <navigator class="setting" url="./address/address">
+      <image src="./images/icon-setting.png" />
+    </navigator>
+  </view>
+  <view class="login" wx:if="{{personalInfo.userType === 'weixin'}}">
+    <image class="icon-vip" src="./images/icon-zy.png" />
+    <test class="text">登录安锋游戏账号，享受会员特权</test>
+    <navigator url="/pages/login/login?target='pages/personal/personal'" class="button">立即登录</navigator>
+  </view> 
+  <view class="guide" wx:else>
+    <navigator class="p-guide" url="../vip/vip">
+      <view class="num">{{personalInfo.exp}}</view>
+      <view class="desc">成长值</view>
+    </navigator>
+    <navigator class="p-guide" url="../store/store">
+      <view class="num">{{personalInfo.score}}</view>
+      <view class="desc">积分</view>
+    </navigator>
+  </view>   
+</view>

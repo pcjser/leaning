@@ -1,0 +1,70 @@
+/*流程控制*/
+/*if 三目运算*/
+
+$screenWidth: 500;
+body {
+	color: if($screenWidth > 768, blue, red);			//三目运算   无@符号
+}
+
+/* @if @else 条件判断 */
+@if $screenWidth > 768 {
+	body {
+		color: red;
+	}
+}
+@else if $screenWidth >400 {
+	span {
+		color: purple;
+	}
+}
+@else {
+	p {
+		color: blue;
+	}
+}
+
+/*@for  循环输出*/
+@for $i from 1 through 5 {		//从1到5 包含5
+	.span#{$i} {
+		width: 20% * $i;
+	}
+}
+
+@for $j from 1 to 5 {			//从1到5  不包含5
+	.sp#{$j} {
+		margin-left: 5px * $j;
+	}
+}
+
+/*@while 循环输出*/
+$k: 6;
+@while $k >= 0 {
+	.p#{$k} {
+		width: 20% * $k;
+	}
+	$k: $k - 2;
+}
+
+
+/*@each  遍历*/
+/*常规遍历*/
+$m: 1;
+@each $c in blue, red, green {
+	.div#{$m} {
+		color: $c;
+	}
+	$m: $m + 1;
+}
+
+@each $key, $color in (default, blue),(info, green),(danger, red) {
+	.text-#{$key} {
+		color: $color;
+	}
+}
+
+//key:value  形式
+@each $key, $value in (default: blue, info: green, danger: red) {
+	.label-#{$key} {
+		color: $value;
+	}
+}

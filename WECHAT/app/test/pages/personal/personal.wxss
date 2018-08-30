@@ -1,0 +1,76 @@
+.personal-page .info {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 24rpx;
+}
+.personal-page .info .avatar {
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+}
+.personal-page .info .nickname {
+  margin-left: 30rpx;
+}
+.personal-page .info .setting {
+  width: 40rpx;
+  height: 40rpx;
+  display: block;
+  position: absolute;
+  right: 24rpx;
+}
+.personal-page .info .setting image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.personal-page .login {
+  display: flex;
+  align-items: center;
+  padding: 40rpx 20rpx;
+  background-color: #f3f2f8;
+  justify-content: space-between;
+}
+.personal-page .login .icon-vip {
+  width: 66rpx;
+  height: 68rpx;
+}
+.personal-page .login .icon-quan {
+  width: 56rpx;
+  height: 50rpx;
+}
+.personal-page .login .text {
+  font-size: 24rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+.personal-page .login .button {
+  color: #ffffff;
+  font-size: 24rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 20rpx 2rpx;
+  border-radius: 6rpx;
+  background-color: #ec3833;
+}
+.personal-page .guide {
+  display: flex;
+  background-color: #f3f2f8;
+  height: 142rpx;
+  align-items: center;
+}
+.personal-page .guide .p-guide {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.personal-page .guide .p-guide .num {
+  font-size: 60rpx;
+}
+.personal-page .guide .p-guide .desc {
+  font-size: 24rpx;
+  color: #666666;
+}

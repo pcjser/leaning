@@ -1,0 +1,28 @@
+.store-record-page {
+  background-color: #f3f4f7;
+  min-height: 100vh;
+}
+.store-record-page .container {
+  height: 100vh;
+}
+.store-record-page .record-list .record-item {
+  background-color: #ffffff;
+  margin-bottom: 16rpx;
+  padding: 40rpx 32rpx;
+  color: #999999;
+  font-size: 28rpx;
+  position: relative;
+}
+.store-record-page .record-list .record-item .r-name {
+  color: #303030;
+  font-size: 32rpx;
+}
+.store-record-page .record-list .record-item .r-time {
+  margin-top: 40rpx;
+}
+.store-record-page .record-list .record-item .r-num {
+  position: absolute;
+  right: 40rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}

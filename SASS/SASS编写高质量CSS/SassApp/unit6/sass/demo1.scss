@@ -1,0 +1,61 @@
+/*导入  原生css导入*/
+@import "css.css";		// .css文件名
+@import "http://...";   	//  路径
+@import url(css.css);  	// url路径
+/*会被默认为原生导入*/
+
+
+/*sass导入*/
+@import "part1";  //_可以不加，.scss后缀名可以不加
+
+
+//sass 导入
+
+
+$fontSize: 14px;
+$fontSize: 12px !default;  //变量默认值  提示该语句可能会被覆盖  不论执行顺序 (不加14px会被覆盖)
+
+$paddings: 3px 5px 6px 10px;  //多值变量
+
+$maps: (color: red, borderColor: blue);  //map型多值变量   
+
+$className: main;		//变量特殊用法
+
+$idName: wrap;
+
+//{}内定义的变量局部变量
+body {
+	$color: red !global;  //变量值后面接!global  全局变量
+	color: $color;
+	font-size: $fontSize;
+}
+
+header {
+	font-size: $fontSize;
+	padding: $paddings;
+	padding-left: nth($paddings, 1); //取多值变量的值1代表第一位
+}
+
+footer {
+	color: $color;
+	background-color: map-get($maps, color);
+	border-color: map-get($maps, borderColor);
+}
+
+.#{$className} {  	//.代表class   #{变量名} 进行引用
+	width: 50px;
+	height: 50px;
+	padding: 0;
+}
+
+##{$idName} {
+	background: map-get($maps, color);
+}
+
+$text-info: pink;
+$text_info: green;
+
+.bg {
+	color: $text-info;		//变量忽略-和_的区别
+}
+

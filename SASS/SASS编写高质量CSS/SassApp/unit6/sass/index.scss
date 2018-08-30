@@ -1,0 +1,27 @@
+body {
+	header {
+		#logo {
+			width: 100px;
+			display: inline-block;
+			img {
+				height: 50px;
+			}
+		}
+		nav {
+			display: inline;
+		}
+		.skin {
+			float: right;
+		}
+	}
+	.container {
+		background: url(../images/header_bg.jpg) no-repeat center top;
+		background-size: cover;
+		height: 400px;
+	}
+	footer {
+		background:url(../images/footer_bg.jpg) no-repeat left top;
+		height:300px;
+		margin-top: 30px;
+	}
+}

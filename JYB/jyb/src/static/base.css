@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: none !important;
+    -webkit-tap-highlight-color: none;
+    box-sizing: border-box;
+    line-height: normal;
+}
+
+body {
+    color: #999999;
+}
+
+a,
+a:hover,
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+    color: #575757;
+}
+
+a.active {
+    color: red;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.fl-left {
+    float: left;
+}
+
+.fl-right {
+    float: right;
+}
+
+.fl-clear {
+    overflow: auto;
+    _height: 1%;
+}
+
+#root {
+    width: 10rem;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>投票</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="/src/js/zepto.min.js"></script>
+    <script type="text/javascript" src="/src/js/qwebchannel.js"></script>
+    <script type="text/javascript" src="/src/js/qtcommon.js"></script>
+</head>
+<body>
+<pre>
+    {
+    "type": "1弹幕2礼物",
+    "bid":  "弹幕唯一id",
+    "platform": "平台douyu",
+    "id": "发送人id",
+    "name": "发送人昵称",
+    "message": "弹幕内容",
+    "level": "发送人级别",
+    "avatar": "发送人头像",
+    "time": "发送时间,时间戳格式",
+    "giftType": "1付费礼物0免费礼物",
+    "giftName":"礼物名称",
+    "giftId": "礼物id",
+    "giftCount": "礼物数量",
+    "giftIcon": "礼物图标",
+    "giftPrice":"礼物价格，单位分",
+    "giftCombo":"礼物连击数"
+    }
+</pre>
+<textarea id="barrage" style="width:350px;height:350px">
+{
+    "type": "1",
+    "bid":  "456",
+    "platform": "douyu",
+    "id": "123",
+    "name": "发送人昵称",
+    "message": "弹幕内容",
+    "level": "",
+    "avatar": "",
+    "time": "",
+    "giftType": "0",
+    "giftName":"礼物名称",
+    "giftId": "礼物id",
+    "giftCount": "1",
+    "giftIcon": "",
+    "giftPrice":"1",
+    "giftCombo":"1"
+}
+</textarea>
+<button type="button" onclick="barrage()">send</button>
+<script>
+    function barrage() {
+        var json=document.getElementById('barrage').value;
+        var obj=JSON.parse(json);
+        var event=obj.type==1?"Barrage":"GiftBarrage";
+        obsEvt({"event":event,"data":json});
+    }
+</script>
+</body>
+</html>

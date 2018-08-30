@@ -1,0 +1,33 @@
+//基本格式
+h1 {
+  color: red;
+}
+
+//变量定义
+$color: red;
+
+//嵌套
+body {
+  header {
+
+  }
+  section {
+
+  }
+}
+
+//mixin混合
+@mixin alert($color: blue) {
+  color: $color;
+}
+
+
+//继承
+.block {
+  margin: 10px;
+  padding: 10px;
+}
+
+p {
+  @extend .block;
+}

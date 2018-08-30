@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			#div1 {
+				width: 200px;
+				height: 300px;
+				position: relative;
+				left: -200px;
+				top: 100px;
+				background: green;
+			}
+			
+			#share {
+				width: 30px;
+				height: 50px;
+				position: absolute;
+				right: -30px;
+				background: red;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="div1"><span id="share">分享</span></div>
+	</body>
+	<script type="text/javascript">
+		var oDiv = document.getElementById("div1");
+		var oShare = document.getElementById("share");
+		oDiv.onmouseover = function() {
+			move(0)
+		}
+		oDiv.onmouseleave = function() {
+			move(-200)
+		}
+		
+		var timer = null;	
+		function move(targrt) {
+			clearInterval(timer);
+			timer = setInterval(function(){
+				var speed = (targrt - oDiv.offsetLeft)/10;
+//				oDiv.offsetLeft > targrt ? speed = -10 : speed = 10;
+				speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+				if(oDiv.offsetLeft === targrt) {
+					clearInterval(timer);
+				}else {
+					oDiv.style.left = oDiv.offsetLeft*1 + speed + 'px';
+				}				
+			},100)
+		}
+		
+//		function hide() {
+//			clearInterval(timer);
+//			timer = setInterval(function(){				
+//				if(oDiv.offsetLeft === -200) {
+//					clearInterval(timer);
+//				}else {
+//					oDiv.style.left = oDiv.offsetLeft*1 - 10 + 'px';
+//				}				
+//			},100)
+//		}
+	</script>
+</html>

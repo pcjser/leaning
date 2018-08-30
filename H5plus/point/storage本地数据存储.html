@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>storage本地数据存储</title>
+</head>
+<body>
+	<script type="text/javascript">
+		document.addEventListener('plusready', function() {
+//			getLength: 获取应用存储区中保存的键值对的个数
+			var total = plus.storage.getLength();
+			console.log(total);
+//			setItem: 修改或添加键值(key-value)对数据到应用数据存储中
+			plus.storage.setItem('name','hcoder');
+//			getItem: 通过键(key)检索获取应用存储的值
+			var name = plus.storage.getItem('name');
+			console.log(name);
+//			removeItem: 通过key值删除键值对存储的数据
+			plus.storage.removeItem('name');
+//			clear: 清除应用所有的键值对存储数据
+			plus.storage.clear();
+//			var total = plus.storage.getLength();
+//			console.log(total);
+		})
+	</script>	
+</body>
+</html>

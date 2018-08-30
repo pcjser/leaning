@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+<!--   	< % = 原封不动输出 %>
+  	< % - 编译HTML标签 % >
+  	< % # ejs的注释 不会在HTML中出现 % >
+  	< % 流程控制 % > -->
+  	
+
+    <div>  
+      <% if(!username) { %>   
+      <input type="button" name="login" value="登陆" onclick="location.href='/login'">
+      <input type="button" name="registor" value="注册" onclick="location.href='/registor'">
+      <% } else { %>
+      <input type="button" value="评论" name="评论" onclick="location.href='/comment'">
+      <input type="button" value="注销" onclick="location.href='/logout'">
+      <% } %>
+    </div>
+  </body>
+</html>

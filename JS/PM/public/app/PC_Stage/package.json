@@ -1,0 +1,12 @@
+{
+  "name": "舞台",
+  "showInMarket":0,
+  "tag": "PC_Stage",
+  "version": "0.0.1",
+  "enable":1,
+  "canBeDeleted":0,
+  "showInMenu":1,
+  "order":25,
+  "setUrl":"/app/PC_Stage/",
+  "intro":"主播可以更换挂件"
+}

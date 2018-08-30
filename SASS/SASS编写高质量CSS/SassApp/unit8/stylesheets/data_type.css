@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/*数字类型*/
+/* line 6, ../sass/data_type.scss */
+p {
+  font-size: 14px;
+}
+
+/*字符串类型*/
+/* line 17, ../sass/data_type.scss */
+.container {
+  font-size: 14px;
+}
+
+/*Bool类型*/
+/*Null类型*/
+/* line 28, ../sass/data_type.scss */
+body {
+  color: red;
+}
+
+/*颜色类型*/
+/* line 39, ../sass/data_type.scss */
+body {
+  color: #fff;
+}
+
+/*运算符*/
+/* line 47, ../sass/data_type.scss */
+span {
+  width: 25px;
+  height: 5px;
+}
+
+/* line 52, ../sass/data_type.scss */
+a:hover {
+  cursor: e-resize;
+}
+
+/* line 56, ../sass/data_type.scss */
+a:before {
+  content: "Abc";
+}
+
+/* line 60, ../sass/data_type.scss */
+a:after {
+  content: Abc;
+}
+
+/* line 65, ../sass/data_type.scss */
+p {
+  padding: 7px auto;
+}
+
+/*字符串内引用变量*/
+/* line 71, ../sass/data_type.scss */
+p:before {
+  content: "Hello,Sass 3";
+}
+
+/*除法注意*/
+/* line 76, ../sass/data_type.scss */
+p {
+  font: 20px / 10px;
+  width: 5px;
+  width: 5px;
+  height: 100px / 2;
+  height: 50px;
+  font: 2;
+}

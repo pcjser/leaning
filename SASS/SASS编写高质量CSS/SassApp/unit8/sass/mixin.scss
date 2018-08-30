@@ -1,0 +1,55 @@
+/*基本混合  同@extend  继承*/
+
+@mixin base {
+	color: red;
+}
+
+body {
+	@include base;
+}
+
+/*带参数混合*/
+@mixin bg($bg-color, $bg-size) {
+	background: $bg-color;
+	background-size: $bg-size;
+}
+
+body {
+	@include bg(green, cover);
+}
+
+//多参数用 , 隔开
+
+/*带默认值参数*/
+@mixin cont($color: red, $font-size: 14px) {
+	color: $color;
+	font-size: $font-size;
+}
+
+body {
+	@include cont($font-size: 18px, $color: green);
+}
+
+/*... 多值参数的传递*/
+@mixin box-shadow($shadow...) {
+	-moz-box-shadow: $shadow;
+	-webkit-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+.shadow {
+	@include box-shadow(0 0 4px #555, 2px 6px 10px #654);
+}
+
+/*传递内容*/
+@mixin style-for-iphone {
+	@media only screen and (min-device-width: 320px) and (max-device-width: 586px) {
+		@content;
+	}
+}
+
+@include style-for-iphone {
+	background: red;
+}
+
+

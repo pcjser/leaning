@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>basic</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.rabbit {
+				width: 102px;
+				height: 80px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="rabbit" class="rabbit">
+
+		</div>
+	</body>
+	<script type="text/javascript">
+		var imgUrl = 'rabbit.png';
+		var positions = ["0 -854", "-174 -852", "-349 -852", "-524 -852", "-698 -851", "-873 -848"];
+		var rabbit = document.getElementById("rabbit");
+
+		animation(rabbit, positions, imgUrl);
+
+		function animation(ele, positions, imgUrl) {
+			ele.style.backgroundImage = 'url(' + imgUrl + ')';
+			ele.style.backgroundRepeat = 'no-repeat';
+
+			var index = 0;
+
+			function run() {
+				var position = positions[index].split(' ');
+				ele.style.backgroundPosition = position[0] + "px " + position[1] + "px";
+				index++;
+				if(index >= positions.length) {
+					index = 0;
+				}
+				setTimeout(run, 80);
+			}
+
+			run();
+		}
+	</script>
+
+</html>

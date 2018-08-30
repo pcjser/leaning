@@ -1,0 +1,98 @@
+.store-gdetail-page {
+  background-color: #f3f4f7;
+  padding-bottom: 120rpx;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+.store-gdetail-page .cover {
+  height: 420rpx;
+  width: 750rpx;
+  display: block;
+}
+.store-gdetail-page .info {
+  background-color: #ffffff;
+  padding: 36rpx 20rpx;
+  line-height: 1;
+  font-size: 28rpx;
+  color: #999999;
+}
+.store-gdetail-page .info .red {
+  color: #ec3833;
+}
+.store-gdetail-page .info .name {
+  font-size: 32rpx;
+  color: #303030;
+  display: flex;
+  align-items: center;
+}
+.store-gdetail-page .info .name .vip {
+  margin-left: 20rpx;
+  display: block;
+  width: 68rpx;
+  height: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6rpx;
+  color: #ffffff;
+  background-color: #ec3833;
+  font-size: 24rpx;
+}
+.store-gdetail-page .info .need {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 12rpx;
+  margin-top: 32rpx;
+}
+.store-gdetail-page .detail {
+  margin-top: 16rpx;
+  background-color: #ffffff;
+  padding: 30rpx;
+}
+.store-gdetail-page .detail .title {
+  line-height: 1;
+  font-size: 30rpx;
+  color: #303030;
+  display: flex;
+  align-items: center;
+}
+.store-gdetail-page .detail .title .line {
+  margin-right: 8rpx;
+  width: 8rpx;
+  height: 30rpx;
+  background-color: #ec3833;
+  border-radius: 4rpx;
+}
+.store-gdetail-page .detail .content {
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  line-height: 1.5;
+}
+.store-gdetail-page .detail .content .wxParse-img {
+  width: 100% !important;
+}
+.store-gdetail-page .exchange {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 750rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  height: 120rpx;
+}
+.store-gdetail-page .exchange .button {
+  width: 666rpx;
+  height: 92rpx;
+  background-color: #ec3833;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 40rpx;
+  border-radius: 6rpx;
+}
+.store-gdetail-page .exchange .button.disable {
+  background-color: #cccccc;
+}

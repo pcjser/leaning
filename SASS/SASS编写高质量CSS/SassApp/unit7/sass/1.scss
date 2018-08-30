@@ -1,0 +1,136 @@
+//嵌套   标签嵌套
+body {
+	background-color: pink;
+
+	header {
+		background-color: red;
+	}
+}
+
+//嵌套 属性嵌套  对有-的属性有效
+footer {
+	background: {
+		color: green;
+		size: 100% 50%;
+	}
+}
+
+//父选择器  &
+a {
+	&:hover {
+		color: red;
+	}
+}
+
+li {
+	color: #fff;
+	&.active {
+		color: #000;
+	}
+}
+
+//@at-root 跳出嵌套   嵌套太深   保持物理位置不变  
+body {
+	.box {
+		@at-root .container {
+			width: 1120px;
+		}
+	}	
+}
+
+
+//常规@at-root无法跳出@media  跳出需要添加参数(without: #)  
+//#的值可取  all(表示所有)   rule(表示常规css)   media(表示media)  support(使用不广泛)   默认为rule
+body {
+	@media screen and (max-width: 600px) {
+		@at-root .wrap {
+			background: green;
+		}
+	}
+	//跳出media
+	@media screen and (max-width: 900px) {
+		@at-root(without: media) {
+			.box {
+				background: green;
+			}
+		}
+	}
+	//跳出media和常规标签
+	@media screen and (max-width: 1100px) {
+		@at-root(without: media rule) {
+			.box {
+				background: green;
+			}
+		}
+	}
+	//跳出全部
+	@media screen and (max-width: 1300px) {
+		@at-root(without: all) {
+			.all {
+				background: green;
+			}
+		}
+	}
+}
+
+
+
+//@at-rrot 与 &
+//父级.text-info 如果需要跳出   添加@at-root即可
+
+.text-info {
+	color: red;
+	@at-root nav & {
+		color: blue;
+	}
+}
+
+//继承  简单继承
+.alert {
+	background-color: yellow;
+}
+.small {
+	font-size: 12px;
+}
+.alert-info {
+	@extend .alert, .small;    //多继承
+	color: red;
+}
+
+
+//链式继承
+.one {
+	border: 1px solid #fff;
+}
+.two {
+	@extend .one;
+	color: red;
+}
+.three {
+	@extend .two;
+	border-radius: 5px;
+}
+
+//继承的局限性
+//不支持包含选择器 .one .two  不支持 .one+.two
+//如果a标签有hover状态  那么改状态的样式也会被继承
+
+
+//交叉继承
+a span {
+	font-weight: bold;
+}
+div .content {
+	@extend span;
+}
+
+//继承的作用域   @media内的继承只能在media内部
+
+//占位选择器   该样式可被继承  不会被编译
+%show {
+	color: red;
+}
+
+.sp {
+	@extend %show;
+}

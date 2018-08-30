@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<pre>
+		包管理工具 npm
+		包安装   npm i 包名@版本号(不带版本默认为最新版) -g(--global 全局) --save(加入管理文件里的dependcies开发依赖里)-dev(开发依赖)[组合可写成-D]
+		包卸载   npm uninstall 包名	--save-dev(删除package里的记录)
+		查看包的详细信息（版本号等）   npm info 包名
+		查看当前安装的包   	npm list | grep gulp   (grep 管道  只查看gulp信息)
+		清除缓存   			npm cache clean
+
+		包管理
+			初始化生成package.json文件     npm init 
+			已安装的包版本信息             npm outdated
+
+		源管理 nrm
+			安装源管理  	npm i nrm -g
+			查看当前源列表  nrm ls
+			源速度测试   	nrm test
+			切换默认源		nrm use 源名
+	</pre>
+</body>
+</html>

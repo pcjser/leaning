@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Face</title>
+    <link rel="stylesheet" href="/src/stylesheets/plugin.css">
+</head>
+	
+<body>
+    <div id="faceBox" class="fix box_container">
+    	<p class="tips"><a href="https://jq.qq.com/?_wv=1027&k=46T6qwE" target="_blank">加主播Q群</a>可申请定制素材</p>
+    	<div class="container">
+			<div id="nav" class="left">
+		    	<ul>
+		    		<li class="active">表情包</li>
+		    	</ul>
+	    	</div>
+	    	<div id="content" class="left">	    		 		
+		        <div class="active list_container">
+		        	<div class="type">
+		    			<p class="s_tit">风格选择：</p>
+		    			<ul>
+		    				<li class="active" data-type="common">常用</li>
+		    				<li data-type="host">主持</li>
+		    				<li data-type="hanmai">喊麦</li>
+		    				<li data-type="person">人物</li>
+		    				<li data-type="local">本地</li>
+		    			</ul>
+		    		</div>   
+		        	<ul class="list" id="faceList">
+			            <li>
+			            	<img src="/app/PC_Face/src/bg/1.jpg" alt="">				            	
+		            		<div class="hide" data-src="/app/PC_Face/src/face/angry/angry.html">
+		            			<div class="btn">使用</div>
+		            			<p class="tit">生气</p>
+		            		</div>						
+			            </li>
+			            <li>
+			            	<img src="/app/PC_Face/src/bg/2.jpg" alt="">				            	
+		            		<div class="hide" data-src="/app/PC_Face/src/face/crow/crow.html">
+		            			<div class="btn">使用</div>
+		            			<p class="tit">乌鸦</p>
+		            		</div>						
+			            </li>
+			            <li>
+			            	<img src="/app/PC_Face/src/bg/3.jpg" alt="">				            	
+		            		<div class="hide" data-src="/app/PC_Face/src/face/jiong/jiong.html">
+		            			<div class="btn">使用</div>
+		            			<p class="tit">囧</p>
+		            		</div>						
+			            </li>
+			            <li>
+			            	<img src="/app/PC_Face/src/bg/1.jpg" alt="">				            	
+		            		<div class="hide" data-src="/app/PC_Face/src/face/laugh/laugh.html">
+		            			<div class="btn">使用</div>
+		            			<p class="tit">大笑</p>
+		            		</div>						
+			            </li>
+			            <li>
+			            	<img src="/app/PC_Face/src/bg/1.jpg" alt="">				            	
+		            		<div class="hide" data-src="/app/PC_Face/src/face/shout/shout.html">
+		            			<div class="btn">使用</div>
+		            			<p class="tit">尖叫</p>
+		            		</div>						
+			            </li>
+		            </ul>
+		        </div>
+	        </div>
+    	</div>   	
+    </div>
+</body>
+<script src="/src/js/zepto.min.js"></script>
+<script src="/src/js/qwebchannel.js"></script>
+<script src="/src/js/qtcommon.js"></script>
+<script>
+	$('#faceList li .hide').on('click', function(){
+		var iframeUrl = $(this).attr('data-src');
+		var json = {
+			'iframeUrl' : iframeUrl
+		}
+		changeFace(json);
+	});
+
+    function changeFace(json){    	
+        var data={"app":"PC_Face","method":"main","data":json};
+        obsRun(data);
+    }
+</script>
+</html>

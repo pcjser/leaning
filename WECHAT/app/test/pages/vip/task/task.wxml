@@ -1,0 +1,31 @@
+<view class="vip-task-page">
+  <view class="banner">
+    <image src="../images/task_banner.png" />
+  </view>
+  <view class="nav">
+    <view class="{{ currentType === 'active' ? 'nav-item active' : 'nav-item' }}" bindtap="changeType" data-type="active">
+      <view class="inner">活跃任务</view>
+    </view>
+    <view class="{{ currentType === 'grow' ? 'nav-item active' : 'nav-item' }}" bindtap="changeType" data-type="grow">
+      <view class="inner">成长任务</view>
+    </view>
+  </view>
+  <view class="task">
+    <block wx:for="{{taskList}}" wx:for-item="task" wx:key="task-{{index}}">
+      <view class="task-item">
+        <image class="icon" src="../images/{{task.icon}}" />
+        <view class="task-detail">
+          <view class="task-name">{{task.title}}</view>
+          <view class="task-jl">
+            <image src="../images/icon_mywalt_vip.png" class="s-icon" />
+            <text style="margin-right: 28rpx;">{{task.grow}}</text>
+            <image src="../images/icon_mywalt_jf.png" class="s-icon" />
+            <text>{{task.integral}}</text>
+            <view class="status" wx:if="{{task.status === 0}}">未完成</view>
+            <view class="status finish" wx:else>已完成</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

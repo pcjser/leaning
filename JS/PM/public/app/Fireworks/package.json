@@ -1,0 +1,12 @@
+{
+  "name": "烟花",
+  "showInMarket":0,
+  "tag":  "Fireworks",
+  "version": "0.0.1",
+  "enable":1,
+  "canBeDeleted":1,
+  "showInMenu":1,
+  "order":0,
+  "setUrl":"",
+  "intro":"烟花"
+}

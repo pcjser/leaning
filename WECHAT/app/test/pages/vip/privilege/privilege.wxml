@@ -1,0 +1,39 @@
+<view class="vip-privilege-page">
+  <view class="inner{{pageData.levelRange}}">
+    <view class="inner-top">
+      <image wx:if="{{pageData.topBg}}" src="../images/{{pageData.topBg}}" />
+      <text class="title">{{pageData.title}}</text>
+      <text class="tip">会员专享</text>
+    </view>
+    <view class="inner-content">
+      <view class="block">
+        <view class="name">
+          <image wx:if="{{pageData.levelRange}}" class="icon" src="../images/vip_icon_name{{pageData.levelRange}}.png" />
+          <view class="text">权益名称</view>
+        </view>
+        <view class="desc">礼包福利特权</view>
+      </view>
+      <view class="block">
+        <view class="name">
+          <image wx:if="{{pageData.levelRange}}" class="icon" src="../images/vip_icon_level{{pageData.levelRange}}.png" />
+          <view class="text">特权等级</view>
+        </view>
+        <view class="desc">{{pageData.level}}</view>
+      </view>
+      <view class="block">
+        <view class="name">
+          <image wx:if="{{pageData.levelRange}}" class="icon" src="../images/vip_icon_explain{{pageData.levelRange}}.png" />
+          <view class="text">权益说明</view>
+        </view>
+        <view class="desc">{{pageData.desc}}</view>
+        <view wx:if="{{pageData.level === 'VIP8'}}" class="desc">
+          <view>以下情况不予找回：</view>
+          <view>①账号共享</view>
+          <view>②账号买卖</view>
+          <view>③第三方充值渠道</view>
+          <view>④包括但不限于以上原因由个人自主自愿提供他人账号密码</view>
+        </view>
+      </view>      
+    </view>
+  </view>
+</view>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stage</title>
+    <link rel="stylesheet" href="/src/stylesheets/plugin.css">
+</head>
+	
+<body>
+    <div id="stageBox" class="fix box_container">
+    	<p class="tips"><a href="https://jq.qq.com/?_wv=1027&k=46T6qwE" target="_blank">加主播Q群</a>可申请定制素材</p>
+    	<div class="container">
+			<div id="nav" class="left">
+		    	<ul>
+		    		<li class="active">舞台</li>
+		    	</ul>
+	    	</div>
+	    	<div id="content" class="left">	    		 		
+		        <div class="active list_container">
+		        	<div class="type">
+		    			<p class="s_tit">风格选择：</p>
+		    			<ul>
+		    				<li class="active" data-type="game">游戏</li>
+		    				<li data-type="game">动漫</li>
+		    				<li data-type="game">风景</li>
+		    			</ul>
+		    		</div>   
+		        	<ul class="list" type="light">
+			            <li>
+			            	<div class="img_container">
+			            		<img src="/app/PC_Stage/src/images/1.jpg" alt="">
+			            		<div class="hide">
+			            			<div class="btn">添加</div>
+			            			<p class="tit">舞台示例1</p>
+			            		</div>			            		
+			        		</div>							
+			            </li>
+			            <li>
+			            	<div class="img_container">
+			            		<img src="/app/PC_Stage/src/images/2.jpg" alt="">
+			            		<div class="hide">
+			            			<div class="btn">添加</div>
+			            			<p class="tit">舞台示例2</p>
+			            		</div>			            		
+			        		</div>							
+			            </li>
+			            <li>
+			            	<div class="img_container">
+			            		<img src="/app/PC_Stage/src/images/3.jpg" alt="">
+			            		<div class="hide">
+			            			<div class="btn">添加</div>
+			            			<p class="tit">舞台示例3</p>
+			            		</div>			            		
+			        		</div>							
+			            </li>
+			            <li>
+			            	<div class="img_container">
+			            		<img src="/app/PC_Stage/src/images/4.jpg" alt="">
+			            		<div class="hide">
+			            			<div class="btn">添加</div>
+			            			<p class="tit">舞台示例4</p>
+			            		</div>			            		
+			        		</div>							
+			            </li>
+			            <li>
+			            	<div class="img_container">
+			            		<img src="/app/PC_Stage/src/images/5.jpg" alt="">
+			            		<div class="hide">
+			            			<div class="btn">添加</div>
+			            			<p class="tit">舞台示例5</p>
+			            		</div>			            		
+			        		</div>							
+			            </li>
+			            <li>
+			            	<div class="img_container">
+			            		<img src="/app/PC_Stage/src/images/6.jpg" alt="">
+			            		<div class="hide">
+			            			<div class="btn">添加</div>
+			            			<p class="tit">舞台示例6</p>
+			            		</div>			            		
+			        		</div>							
+			            </li>
+			            <li>
+			            	<div class="img_container">
+			            		<img src="/app/PC_Stage/src/images/7.jpg" alt="">
+			            		<div class="hide">
+			            			<div class="btn">添加</div>
+			            			<p class="tit">舞台示例7</p>
+			            		</div>			            		
+			        		</div>							
+			            </li>
+			            <li>
+			            	<div class="img_container">
+			            		<img src="/app/PC_Stage/src/images/8.jpg" alt="">
+			            		<div class="hide">
+			            			<div class="btn">添加</div>
+			            			<p class="tit">舞台示例8</p>
+			            		</div>			            		
+			        		</div>							
+			            </li>
+			            <li>
+			            	<div class="img_container">
+			            		<img src="/app/PC_Stage/src/images/9.jpg" alt="">
+			            		<div class="hide">
+			            			<div class="btn">添加</div>
+			            			<p class="tit">舞台示例9</p>
+			            		</div>			            		
+			        		</div>							
+			            </li>
+		            </ul>
+		        </div>
+	        </div>
+    	</div>   	
+    </div>
+</body>
+<script src="/src/js/zepto.min.js"></script>
+<script src="/src/js/qwebchannel.js"></script>
+<script src="/src/js/qtcommon.js"></script>
+<script>
+
+	$('.list .hide').on('click', function(){
+		var stageSrc = $(this).prev('img').attr('src');
+		var name = $(this).find('.tit').text();
+		var src = {
+			"stageSrc" : stageSrc,
+			"stageName" : name
+		};
+		var data = {
+			"event" : "changeStage",
+			"data" : src
+		}
+		console.log(data);
+		obsEvt(data);
+	});
+	
+	// function sendStage(json){
+ //    	var data = {"app":"PC_Stage","method":"main","data":json};
+ //    	// console.log(JSON.stringify(data));
+ //        HsAppJs.runAppMethod(JSON.stringify(data));
+ //    }
+
+</script>
+</html>

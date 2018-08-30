@@ -1,0 +1,11 @@
+{
+  "name": "消息提示",
+  "showInMarket":0,
+  "tag": "Notify",
+  "version": "0.0.1",
+  "enable":1,
+  "canBeDeleted":0,
+  "showInMenu":0,
+  "order":0,
+  "intro":"系统消息提示"
+}

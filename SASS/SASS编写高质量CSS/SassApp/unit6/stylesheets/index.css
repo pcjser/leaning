@@ -1,0 +1,29 @@
+/* line 3, ../sass/index.scss */
+body header #logo {
+  width: 100px;
+  display: inline-block;
+}
+/* line 6, ../sass/index.scss */
+body header #logo img {
+  height: 50px;
+}
+/* line 10, ../sass/index.scss */
+body header nav {
+  display: inline;
+}
+/* line 13, ../sass/index.scss */
+body header .skin {
+  float: right;
+}
+/* line 17, ../sass/index.scss */
+body .container {
+  background: url(../images/header_bg.jpg) no-repeat center top;
+  background-size: cover;
+  height: 400px;
+}
+/* line 22, ../sass/index.scss */
+body footer {
+  background: url(../images/footer_bg.jpg) no-repeat left top;
+  height: 300px;
+  margin-top: 30px;
+}

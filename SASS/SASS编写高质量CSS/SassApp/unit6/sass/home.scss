@@ -1,0 +1,30 @@
+$border-radius: 5px;
+$bg-colors: (success: #dff0d8, info: #d9edf7, warning: #fcf8e3, danger: #f2dede);		//map
+$border-colors: #d6e9c6 #bce8f1 #faebcc #ebccd1;			//多值变量
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: $border-radius;
+}
+
+.alert-success {
+	background-color: map-get($bg-colors, success);
+	border-color: nth($border-colors, 1);
+}
+
+.alert-info {
+	background-color: map-get($bg-colors, info);
+	border-color: nth($border-colors, 2);
+}
+
+.alert-warning {
+	background-color: map-get($bg-colors, warning);
+	border-color: nth($border-colors, 3);
+}
+
+.alert-danger {
+	background-color: map-get($bg-colors, danger);
+	border-color: nth($border-colors, 4);
+}

@@ -1,0 +1,23 @@
+<view class="store-integral-page">
+<loading wx:if="{{!init}}">加载中...</loading>
+  <scroll-view wx:if="{{init && integralList.length > 0}}" class="container" scroll-y bindscrolltolower="loadmore">
+    <view class="integral-list">
+      <block wx:for="{{integralList}}" wx:for-item="integral" wx:key="integral-{{index}}">
+        <view class="integral-item">
+          <view class="point"></view>
+          <view class="symbol">{{integral.score*1 > 0 ? '+' : '-'}}</view>
+          <view class="int-num">{{integral.score*1 > 0 ? integral.score : integral.score*-1}}</view>
+          <view class="int-text">
+            <view class="text">{{integral.text}}</view>
+            <view class="time">{{integral.time}}</view> 
+          </view>       
+        </view>
+      </block>
+    </view>
+    <view class="no-more" wx:if="{{!hasMore}}">暂无更多数据</view>
+  </scroll-view>
+  <view wx:else class="no-data">
+    <image class="no-data-img" src="../../../assets/no_data.png" />
+    <view class="no-data-text">暂无数据</view>
+  </view>
+</view>

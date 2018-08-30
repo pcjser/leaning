@@ -1,0 +1,7 @@
+/*雪碧图的使用*/
+@import "compass/utilities/sprites";	//引入功能
+@import "icons/*.png";		//载入图片
+
+$icons-sprite-dimensions: true;	//启动图片的宽高  css中图片会产生宽高
+
+@include all-icons-sprites;

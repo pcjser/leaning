@@ -1,0 +1,40 @@
+<view class="inex-page">
+	<image class="banner" src="./images/banner-01.jpg" />
+	<view class="container">
+		<view class="title">福利中心</view>
+		<view class="link">
+			<view class="link-item">
+				<navigator url="../vip/vip">
+					<text>VIP特权</text>
+					<view class="image-wrap">
+						<image src="./images/icon-vip.png" />
+					</view>
+				</navigator>
+			</view>
+			<view class="link-item">
+				<navigator url="../store/store">
+					<text>积分商城</text>
+					<view class="image-wrap">
+						<image src="./images/icon-store.png" />
+					</view>
+				</navigator>
+			</view>
+			<view class="link-item">
+				<navigator url="../game/game">
+					<text>游戏中心</text>
+					<view class="image-wrap">
+						<image src="./images/icon-game.png" />
+					</view>
+				</navigator>
+			</view>
+			<view class="link-item">
+				<navigator url="../personal/personal">
+					<text>个人中心</text>
+					<view class="image-wrap">
+						<image src="./images/icon-user.png" />
+					</view>
+				</navigator>
+			</view>
+		</view>
+	</view>
+</view>

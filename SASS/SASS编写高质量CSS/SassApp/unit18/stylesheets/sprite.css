@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/*雪碧图的使用*/
+/* line 64, icons/*.png */
+.icons-sprite, .icons-Cd_Rom, .icons-Entire_Network, .icons-Recent_Docs {
+  background-image: url('/images/icons-s7383ee9c08.png');
+  background-repeat: no-repeat;
+}
+
+/* line 84, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icons-Cd_Rom {
+  background-position: 0 0;
+  height: 32px;
+  width: 32px;
+}
+
+/* line 84, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icons-Entire_Network {
+  background-position: 0 -32px;
+  height: 32px;
+  width: 32px;
+}
+
+/* line 84, ../../../../../../../../Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.icons-Recent_Docs {
+  background-position: 0 -64px;
+  height: 32px;
+  width: 32px;
+}

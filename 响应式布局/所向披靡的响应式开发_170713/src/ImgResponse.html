@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .content {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        img {
+            display: block;
+            /*width: 100%;*/
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+<!-- 响应式图片实现
+    1.srcset + sizes组合
+    2.picture标签
+ -->
+    <div class="content">
+        <img src="img/480.png"
+        srcset="img/480.png 480w, img/800.png 800w, img/1600.png 1600w"
+        sizes="100vw"
+        alt="">
+        <!-- vw表示视口宽度 viewport width
+             100vw默认值 表示100%视口宽度 不受样式影响
+             size="50vw" 表示视口宽度50%
+             size="(min-width:800px) 800px, 100vw" 视口宽度大于800时图片宽度为800px, 小于800px时图片宽度为100%视口宽度
+
+             800px 可用计算代替  calc(100vm - 30em)  等等
+         -->
+    </div>
+
+    <div class="content">
+        <picture>
+        <!-- 从上到下 逐个筛选 -->
+            <source media="(max-width: 36em)"
+                    srcset="img/tiananmen-s.jpg 768w" />
+            <!-- 横屏 -->
+<!--             <source media="(orientation: landscape)"
+                    srcset="img/tiananmen-s.jpg 768w" /> -->
+
+            <source type="image/svg+xml"
+                    srcset="logo.svg 480w, logo.svg 800w, logo.svg 1600w" />
+            <!-- 谷歌开发的图片格式 -->
+            <source type="image/webp"
+                    srcset="logo.webp 480w, logo.webp 800w, logo.webp 1600w" />
+
+            <source srcset="img/tiananmen.jpg 1800w" />
+            <img src="img/tiananmen.jpg" alt="">
+        </picture>
+    </div>
+</body>
+</html>

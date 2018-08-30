@@ -1,0 +1,12 @@
+{
+  "name": "弹幕抽奖",
+  "showInMarket":1,
+  "tag": "Lottery",
+  "version": "0.0.1",
+  "enable":1,
+  "canBeDeleted":0,
+  "showInMenu":1,
+  "order":0,
+  "setUrl":"/app/Lottery/",
+  "intro":"主播用弹幕进行抽奖"
+}

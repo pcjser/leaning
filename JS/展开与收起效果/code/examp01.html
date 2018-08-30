@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>展开与收起效果01</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #pn {
+            background: #e8e8e8;
+            width: 600px;
+            margin: 0 auto;
+            padding: 5px;
+            font-size: 9pt;
+        }
+        .slide {
+            margin: 0 auto;
+            width: 600px;
+            border-top: solid 4px gray;
+        }
+        .btn-slide {
+            background: gray;
+            width: 120px;
+            height: 30px;
+            text-align: center;
+            margin: 0 auto;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="pn">
+        <p>手机-商品筛选</p>
+        <p>网络：移动4G 联通3G 电信3G</p>
+        <div id="hpn" style="display: none;">
+            <p>价格：5000以上 4000-4999 3000-3999</p>
+            <p>特点：JDPhone计划 “0”元购机 防水 长待机 1080P全高清屏</p>
+        </div>
+    </div>
+    <p class="slide">
+        <a href="javascript:;" tag="true" id="strHref" class="btn-slide">更多选项+</a>
+    </p>
+</body>
+<script type="text/javascript">
+    var oHpn = document.querySelector("#hpn");
+    var oBtn = document.querySelector("#strHref");
+    oBtn.onclick = function(){
+        var tag = oBtn.getAttribute('tag');
+        if(tag === "true"){
+            showDiv();
+            oBtn.setAttribute('tag','false');
+        }else {
+            hideDiv();
+            oBtn.setAttribute('tag','true');
+        }        
+    }
+    function showDiv(){
+        oBtn.innerHTML="收起"
+        oHpn.style.display="block";
+    }
+    function hideDiv(){
+        oBtn.innerHTML="更多选项+"
+        oHpn.style.display="none";
+    }
+</script>
+</html>

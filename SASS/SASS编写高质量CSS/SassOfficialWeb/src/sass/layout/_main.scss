@@ -1,0 +1,42 @@
+$susy: (
+	global-box-sizing: $susy-box-sizing,
+	columns: $susy-columns,
+	gutters: $susy-gutters,
+	gutter-position: inside
+);
+
+@include border-box-sizing();
+
+html {
+	font-family: $global-font-family;
+	font-size: 100%;
+	line-height: 1.5em;
+	text-align: center;
+}
+
+.container {
+	@include container($container-width);
+	@include clearfix;
+}
+
+h2 {
+	font-family: "source-serif-pro",Georgia,"Times New Roman",Times,serif;
+    font-size: 24px;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    line-height: 1em;
+    font-weight: 300;
+    letter-spacing: -0.03125em;
+    color: #699;
+}
+
+h3 {
+    padding-top: 2.25em;
+    padding-bottom: .75em;
+    font-size: 1em;
+    line-height: 1.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .03125em;
+    color: #808c99;
+}

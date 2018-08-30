@@ -1,0 +1,41 @@
+<view class="personal-address-page">
+	<view class="title">修改您的默认收货地址</view>
+	<view class="info-enter">
+		<view class="line">
+			<view class="label">
+				收货地址
+			</view>
+			<view class="enter">
+				<picker class="picker" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+					<view class="inner">{{region[0]}} {{region[1]}}	{{region[2]}}</view>
+				</picker>
+				<input class="input" bindinput="bindAddressInput" placeholder="详细地址" type="text" value="{{address}}" />
+			</view>
+		</view>
+		<view class="line">
+			<view class="label">
+				姓<text style="visibility: hidden;">占位</text>名
+			</view>
+			<view class="enter">
+				<input class="input" bindinput="bindContactsInput" placeholder="收件人姓名" type="text" value="{{contacts}}" />
+			</view>
+		</view>
+		<view class="line">
+			<view class="label">
+				电<text style="visibility: hidden;">占位</text>话
+			</view>
+			<view class="enter">
+				<input class="input" maxlength="11" bindinput="bindMobileInput" placeholder="收件人电话" type="number" value="{{mobile}}" />
+			</view>
+		</view>
+		<view class="tips">小贴士：商品包邮，默认韵达快递，国家法定节假日不发货</view>
+	</view>
+	<view class="btns">
+		<view class="btn" bindtap="goBackTap">
+			返 回
+		</view>
+		<view class="btn confirm" bindtap="confirmTap">
+			确 认
+		</view>
+	</view>
+</view>

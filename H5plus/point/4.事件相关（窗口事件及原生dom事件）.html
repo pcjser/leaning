@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>事件相关（窗口事件及原生dom事件）</title>
+	</head>
+
+	<body>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<h1>44556465</h1>
+		<script type="text/javascript">
+			document.addEventListener('plusready', function() {
+//				1、addEventListener 添加事件监听函数
+//				document.addEventListener( event, callback, capture );
+				/*
+				参数：
+				event: ( DOMString ) 必选 要添加监听的事件类型，可取下面面列出的所有事件常量
+				callback: ( EventTrigCallback ) 必选 扩展API加载完毕触发的回调函数
+				capture: ( Boolean ) 可选 事件流捕获顺序，可忽略
+				事件常量
+				"plusready": 扩展API加载完成事件
+				"pause": 运行环境从前台切换到后台事件
+				"resume": 运行环境从后台切换到前台事件
+				"netchange": 设备网络状态变化事件
+				"newintent": 新意图事件
+				"plusscrollbottom": 窗口滚动到底部事件
+				"error": 页面加载错误事件
+				*/
+				
+				//3、"pause": 运行环境从前台切换到后台事件   从菜单多任务切换可见输出
+//				document.addEventListener('pause', function(){
+//			        console.log('app 在后端运行');
+//			    }, false);
+			    //"resume": 运行环境从后台切换到前台事件
+//			    document.addEventListener('resume',function(){
+//					console.log('app 在前端运行');
+//				}, false)
+			    
+			    //4、"plusscrollbottom": 窗口滚动到底部事件
+//			    document.addEventListener( "plusscrollbottom", function(){
+//			    	console.log('窗口滚动到底部');
+//			    }, false );
+			    
+				//5、原生dom事件
+//				<a href="javascript:test();">test</a>
+//				//js代码
+//				function test(){alert(1);}
+			})
+		</script>
+	</body>
+
+</html>

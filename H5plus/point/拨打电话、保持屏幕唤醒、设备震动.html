@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>拨打电话、保持屏幕唤醒、设备震动</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			document.addEventListener('plusready', function() {
+				//1、拨打电话
+				/*
+				参数：
+				number: ( String ) 必选 要拨打的电话号码
+				confirm: ( Boolean ) 可选 是否需要用户确认后开始拨打电话
+				设置为true表示打开系统拨打电话界面，需用户点击拨号按钮后才开始拨打电话
+				false则无需确认直接拨打电话，默认值为true。//不同的手机可能表现形式不同
+				返回值：
+				void : 无
+				平台支持：
+				Android - 2.2+ (支持)，iOS - 5.1+ (支持): 忽略confirm参数，调用直接拨打电话。 
+				*/
+				//plus.device.dial('1008611', false);
+
+				//2、保持屏幕唤醒				
+				//参数：
+				//lock: ( Boolean ) 必选 是否设置程序一直保持唤醒状态
+				//可取值true或false，true表示设定程序一直保持唤醒状态，false表示关闭程序一直保持唤醒状态。程序退出后将恢复默认状态，默认为关闭程序保持唤醒状态。
+				//plus.device.setWakelock(false);
+
+				//3、isWakelock 获取程序是否一直保持唤醒（屏幕常亮）状态
+				//if(plus.device.isWakelock()){
+				//    alert('屏幕保持唤醒状态');
+				//} else {
+				//   alert('no');
+				//}
+
+				//4、设备震动
+				/*
+				 参数：
+				milliseconds: ( Number ) 必选 设备振动持续的时间
+				数值类型，单位为ms，默认为500ms。
+				 */
+//				plus.device.vibrate();
+			})
+		</script>
+	</body>
+
+</html>

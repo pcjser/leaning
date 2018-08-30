@@ -1,0 +1,12 @@
+{
+  "name": "BadApple",
+  "showInMarket":0,   //在市场显示
+  "tag":  "BadApple",   //英文唯一标识
+  "version": "0.0.1",
+  "enable":1,         //是否启用
+  "canBeDeleted":1,   //是否能被卸载
+  "showInMenu":0,     //是否显示在列表
+  "order":0,          //排序，0表示自动，非0表示固定出现在此位置
+  "setUrl":"",       //设置网页地址
+  "intro":"BadApple"   //使用时删除注释
+}

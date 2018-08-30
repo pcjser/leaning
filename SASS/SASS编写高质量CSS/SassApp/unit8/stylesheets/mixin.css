@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/*基本混合  同@extend  继承*/
+/* line 7, ../sass/mixin.scss */
+body {
+  color: red;
+}
+
+/*带参数混合*/
+/* line 17, ../sass/mixin.scss */
+body {
+  background: green;
+  background-size: cover;
+}
+
+/*带默认值参数*/
+/* line 29, ../sass/mixin.scss */
+body {
+  color: green;
+  font-size: 18px;
+}
+
+/*... 多值参数的传递*/
+/* line 40, ../sass/mixin.scss */
+.shadow {
+  -moz-box-shadow: 0 0 4px #555, 2px 6px 10px #654;
+  -webkit-box-shadow: 0 0 4px #555, 2px 6px 10px #654;
+  box-shadow: 0 0 4px #555, 2px 6px 10px #654;
+}
+
+/*传递内容*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 586px) {
+  background: red;
+}

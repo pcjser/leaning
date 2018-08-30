@@ -1,0 +1,48 @@
+.game-page {
+  padding-left: 32rpx;
+  .container {
+    height: 100vh;
+  }
+  .game-item {
+    display: flex;
+    border-top: 1rpx solid #efefef;
+    padding: 28rpx 0;
+    &:first-child {
+      border-top: none;
+    }
+    .game-cover {
+      width: 132rpx;
+      height: 132rpx;
+      border-radius: 24rpx;
+      margin-right: 28rpx;
+    }
+    .game-info {
+      width: 500rpx;
+      .name {
+        font-size: 32rpx;
+        line-height: 52rpx;
+        color: #303030;
+      }
+      .desc {
+        font-size: 28rpx;
+        color: #999999;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 44rpx;
+      }
+      .tag-wrap {
+        font-size: 22rpx;
+        display: flex;
+        margin-top: 6rpx;
+        .tag {
+          color: #ffffff;
+          background-color: #00c806;
+          margin-right: 12rpx;
+          padding: 0 10rpx 2rpx;
+          border-radius: 6rpx;
+        }
+      }
+    }
+  }
+}

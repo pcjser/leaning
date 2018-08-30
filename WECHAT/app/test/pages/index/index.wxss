@@ -1,0 +1,45 @@
+.inex-page .banner {
+  display: block;
+  height: 445rpx;
+  width: 750rpx;
+}
+.inex-page .container {
+  padding: 38rpx 34rpx 0;
+  color: #303030;
+}
+.inex-page .container .title {
+  font-size: 38rpx;
+  font-weight: 700;
+  line-height: 1;
+}
+.inex-page .container .link {
+  display: flex;
+  flex-wrap: wrap;
+}
+.inex-page .container .link .link-item {
+  background-color: #f3f3f3;
+  border-radius: 10rpx;
+  margin-top: 34rpx;
+}
+.inex-page .container .link .link-item:nth-child(2n-1) {
+  margin-right: 34rpx;
+}
+.inex-page .container .link .link-item navigator {
+  font-size: 34rpx;
+  height: 152rpx;
+  width: 324rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inex-page .container .link .link-item navigator .image-wrap {
+  margin-left: 26rpx;
+  width: 92rpx;
+  height: 92rpx;
+  border: 2rpx dashed rgba(54, 153, 255, 0.6);
+  background-color: rgba(54, 153, 255, 0.2);
+}
+.inex-page .container .link .link-item navigator .image-wrap image {
+  width: 90rpx;
+  height: 90rpx;
+}

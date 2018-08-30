@@ -1,0 +1,14 @@
+@function getzIndex($layer: default) {	
+	$zindex: 1;
+	$zindexMap: (default: 1, modal: 1000, dropdown: 500, grid: 300);
+	//参数容错
+	@if map-has-key($zindexMap, $layer) {
+		$zindex: map-get($zindexMap, $layer);
+	}	
+	@return $zindex;
+}
+
+//$layer 可选: default, modal, dropdown, grid 
+@debug getzIndex('grid');	//输出300
+
+@debug getzIndex(123); 	//输出1

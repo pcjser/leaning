@@ -1,0 +1,12 @@
+{
+  "name": "背景",
+  "showInMarket":1,
+  "tag": "PC_Background",
+  "version": "0.0.1",
+  "enable":1,
+  "canBeDeleted":0,
+  "showInMenu":1,
+  "order":0,
+  "setUrl":"/app/PC_Background/",
+  "intro":"主播可以更换显示背景图"
+}

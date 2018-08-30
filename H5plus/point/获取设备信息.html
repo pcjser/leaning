@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>获取设备信息</title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			document.addEventListener('plusready', function() {
+				/*1、获取设备信息*/
+				//imei: 设备的国际移动设备身份码 
+				//alert(plus.device.imei);
+				//imsi: 设备的国际移动用户识别码
+				//alert(plus.device.imsi);
+				//model: 设备的型号 
+				//alert(plus.device.model);
+				//vendor: 设备的生产厂商 
+				//alert(plus.device.vendor);
+				//uuid: 设备的唯一标识
+				//alert(plus.device.uuid);
+
+				/*2、OS 底层系统信息*/
+				//				language: 系统语言信息
+				//alert(plus.os.language);
+				//version: 系统版本信息
+				//alert(plus.os.version);
+				//name: 系统的名称
+				//alert(plus.os.name);
+				//vendor: 系统的供应商信息
+				//alert(plus.os.vendor);
+
+				/*3、Screen模块管理设备屏幕信息*/
+				//resolutionHeight: 设备屏幕高度分辨率
+				//resolutionWidth: 设备屏幕宽度分辨率
+				//scale: 逻辑分辨率与实际分辨率的比例
+				//alert('页面分辨率:' + plus.screen.resolutionWidth + '*' + plus.screen.resolutionHeight)
+				//alert('物理分辨率:' + plus.screen.resolutionWidth * plus.screen.scale + '*' + plus.screen.resolutionHeight * plus.screen.scale)
+				//alert('像素比:' + plus.screen.scale);
+
+				/*4、Display模块管理应用可使用的显示区域信息*/
+				//应用可使用的屏幕高度逻辑分辨率
+				//alert(plus.display.resolutionHeight); //头部20px
+				//应用可使用的屏幕宽度逻辑分辨率
+				//alert(plus.display.resolutionWidth);
+
+				/*5、屏幕亮度*/
+				//获取亮度值 0-1之间
+				//alert(plus.screen.getBrightness())
+				//设置屏幕亮度
+				//plus.screen.setBrightness(0.4)
+
+				/*屏幕方向*/
+				//锁定屏幕方向
+				//plus.screen.lockOrientation( String orientation );
+				//参数
+				//orientation: ( String ) 必选 要锁定的屏幕方向值
+				//锁定屏幕方向可取以下值： 
+				//"portrait-primary": 竖屏正方向； 
+				//"portrait-secondary": 竖屏反方向，屏幕正方向按顺时针旋转180°;
+				//"landscape-primary": 横屏正方向，屏幕正方向按顺时针旋转90°;
+				//"landscape-secondary": 横屏方向，屏幕正方向按顺时针旋转270°; 
+				//"portrait": 竖屏正方向或反方向，根据设备重力感应器自动调整;
+				//"landscape": 横屏正方向或反方向，根据设备重力感应器自动调整;
+				//解除锁定屏幕方向
+				//plus.screen.unlockOrientation();
+			})
+		</script>
+	</body>
+
+</html>

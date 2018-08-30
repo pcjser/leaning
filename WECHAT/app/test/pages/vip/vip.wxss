@@ -1,0 +1,104 @@
+.vip-page .up {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 104rpx;
+  font-size: 34rpx;
+  color: #ffffff;
+  line-height: 100rpx;
+}
+.vip-swiper {
+  height: 100vh;
+}
+.vip-swiper .swiper-item {
+  color: #666666;
+  font-size: 26rpx;
+  text-align: center;
+  overflow-y: auto;
+}
+.vip-swiper .swiper-item .image-box {
+  position: relative;
+  height: 374rpx;
+}
+.vip-swiper .swiper-item .image-box .image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 636rpx;
+  height: 374rpx;
+}
+.vip-swiper .swiper-item .image-box .level-info {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 636rpx;
+  height: 374rpx;
+  color: #ffffff;
+}
+.vip-swiper .swiper-item .image-box .level-info .level {
+  font-size: 45rpx;
+  position: absolute;
+  left: 45rpx;
+  top: 35rpx;
+}
+.vip-swiper .swiper-item .image-box .level-info .step {
+  font-size: 24rpx;
+  position: absolute;
+  right: 45rpx;
+  top: 60rpx;
+  opacity: .8;
+}
+.vip-swiper .swiper-item .image-box .level-info .step .level-icon {
+  width: 32rpx;
+  height: 24rpx;
+  margin-right: 8rpx;
+}
+.vip-swiper .swiper-item .image-box .level-info .progress {
+  margin: 170rpx 40rpx 0;
+}
+.vip-swiper .swiper-item .image-box .level-info .num {
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+.vip-swiper .swiper-item .image-box .level-info .s-tip {
+  position: absolute;
+  left: 45rpx;
+  top: 300rpx;
+  font-size: 24rpx;
+  opacity: .6;
+}
+.vip-swiper .swiper-item .tip {
+  margin: 60rpx 0 26rpx;
+}
+.vip-swiper .swiper-item .privilege {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 124rpx;
+}
+.vip-swiper .swiper-item .privilege .privilege-item {
+  width: 250rpx;
+  height: 160rpx;
+  margin-top: 30rpx;
+  text-align: center;
+}
+.vip-swiper .swiper-item .privilege .privilege-item .icon {
+  display: block;
+  width: 92rpx;
+  height: 92rpx;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.vip-swiper .swiper-item .privilege .privilege-item .icon image {
+  width: 92rpx;
+  height: 92rpx;
+}
+.vip-swiper .swiper-item .privilege .privilege-item .name {
+  margin-top: 22rpx;
+  font-size: 26rpx;
+}

@@ -1,0 +1,12 @@
+{
+  "name": "弹幕投票",
+  "showInMarket":1,
+  "tag": "Vote",
+  "version": "0.0.1",
+  "enable":1,
+  "canBeDeleted":0,
+  "showInMenu":1,
+  "order":0,
+  "setUrl":"/app/Vote/",
+  "intro":"观众用弹幕进行投票"
+}

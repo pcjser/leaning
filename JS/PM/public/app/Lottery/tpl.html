@@ -1,0 +1,155 @@
+<style>
+    #stage_Lottery >div{
+        min-width:300px;
+        /*height:100%;*/
+        background-color: rgba(255,255,255,0.6);
+        padding-bottom: 10px;
+        font-size:20px;
+    }
+    #stage_Lottery .title{
+        width:100%;
+        height:34px;
+        line-height:34px;
+        text-align: center;
+        color: #fff;
+        font-size: 1em;
+        letter-spacing: 2px;
+    }
+    #stage_Lottery .radiusCnt{
+        border-radius: 3px;
+        margin:5px;
+        background-color: #fbfbfb;
+        color: #666;
+        padding: 5px 10px;
+        font-size: 1em;
+    }
+    #stage_Lottery h3{
+        color:#43befe;
+        font-size:1.1em;
+        margin: 5px 0 0 0;
+    }
+    #stage_Lottery li{
+        list-style: none;
+        margin: 10px 0;
+    }
+    #stage_Lottery .voteBar{
+        width:1%;
+        background-color: rgb(255,208,125);
+        height: 5px;
+        display: inline-block;
+    }
+    #stage_Lottery .voteCount{
+        color:#f61752;
+        font-size:1em;
+        float: right;
+    }
+    #stage_Lottery .barrageName{
+        color:#04c073;
+        font-size:1em;
+    }
+    #stage_Lottery .barrageCnt{
+        color:#666;
+        font-size:1em;
+    }
+    #stage_Lottery .timer{
+        width:100%;
+        height:63px;
+        text-align: center;
+        color: #fff;
+        font-size:1em;
+    }
+    #stage_Lottery .timer>div{
+        margin:0 10px;
+        height:70px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center 0;
+    }
+    #stage_Lottery .title{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center 0;
+    }
+
+
+    #stage_Lottery .timer>div.default{
+        background-image: url("/app/Lottery/images/style/default/btn-vote.png");
+    }
+    #stage_Lottery .title.default{
+        background-image: url("/app/Lottery/images/style/default/title-panel.png");
+    }
+    #stage_Lottery .timer>div.yellow{
+        background-image: url("/app/Lottery/images/style/yellow/btn-vote.png");
+    }
+    #stage_Lottery .title.yellow{
+        background-image: url("/app/Lottery/images/style/yellow/title-panel.png");
+    }
+    #stage_Lottery .timer .title{
+        background-image:none;
+        width: 100%;
+    }
+    #stage_Lottery #barrageList{
+        min-height:100px;
+    }
+    #stage_Lottery #barrageList p{
+        margin:5px 0;
+    }
+    #stage_Lottery #voteData{
+        min-height:50px;
+    }
+    #stage_Lottery #voteData>div{
+        margin:10px 0;
+    }
+    .content
+    {
+        position: absolute;
+    }
+</style>
+<div class="content" style="position: absolute;clear:both">
+    <div class="title {{style}}">弹幕抽奖</div>
+    <div class="radiusCnt">
+        <h3 class="h3">抽奖说明</h3>
+        <p>{{#cnt}}</p>
+
+        <h3 class="h3">抽奖人数</h3>
+        <p>{{if peoples }} {{peoples}} 人 {{else}} 主播控制 {{/if}}</p>
+        <h3 class="h3">观众等级限制</h3>
+        <p>{{if level }} 观众需达到{{level}}级 {{else}} 不限 {{/if}}</p>
+        <h3 class="h3">抽奖范围</h3>
+        <p>
+            {{if barrageLottery=='1'}} 弹幕抽奖 {{/if}}
+            {{if giftLottery=='1'}} 礼物抽奖 {{/if}}
+        </p>
+        {{if kw }}
+        <h3 class="h3">抽奖弹幕</h3>
+        <p>{{kw}}</p>
+        {{/if}}
+
+    </div>
+
+    <div class="radiusCnt">
+        <h3 class="h3">中奖名单</h3>
+        <div id="voteData">
+
+
+        </div>
+    </div>
+
+
+    <div class="radiusCnt">
+        <h3 class="h3">弹幕池</h3>
+        <div id="barrageList">
+
+        </div>
+    </div>
+
+    <div class="timer">
+        <div class="{{style}}">
+            <p class="title">抽奖</p>
+            <p><span id="timerType">倒计时</span> <span id="timer">00:00:00</span></p>
+        </div>
+    </div>
+
+</div>
+
+

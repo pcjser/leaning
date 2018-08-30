@@ -1,0 +1,56 @@
+.vip-privilege-page .inner-top {
+  height: 288rpx;
+  color: #ffffff;
+}
+.vip-privilege-page .inner-top image {
+  width: 750rpx;
+  height: 288rpx;
+  position: absolute;
+  top: 0;
+}
+.vip-privilege-page .inner-top .title {
+  font-size: 40rpx;
+  font-weight: 700;
+  position: absolute;
+  left: 40rpx;
+  top: 100rpx;
+}
+.vip-privilege-page .inner-top .tip {
+  font-size: 26rpx;
+  position: absolute;
+  top: 170rpx;
+  left: 40rpx;
+}
+.vip-privilege-page .inner1-3 .inner-top {
+  background: linear-gradient(#5d6a7c, #3a424f);
+}
+.vip-privilege-page .inner4-6 .inner-top {
+  background: linear-gradient(#e8d4a8, #c09f69);
+}
+.vip-privilege-page .inner7-9 .inner-top {
+  background: linear-gradient(#363636, #222222);
+}
+.vip-privilege-page .inner-content {
+  padding: 64rpx 40rpx 0;
+  color: #666666;
+}
+.vip-privilege-page .inner-content .block {
+  min-height: 160rpx;
+}
+.vip-privilege-page .inner-content .block .name {
+  display: flex;
+}
+.vip-privilege-page .inner-content .block .name .icon {
+  width: 48rpx;
+  height: 48rpx;
+}
+.vip-privilege-page .inner-content .block .name .text {
+  margin-left: 22rpx;
+  font-size: 34rpx;
+  font-weight: 700;
+}
+.vip-privilege-page .inner-content .block .desc {
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  padding-left: 72rpx;
+}

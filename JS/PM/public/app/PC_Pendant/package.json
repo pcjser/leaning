@@ -1,0 +1,12 @@
+{
+  "name": "挂件",
+  "showInMarket":1,
+  "tag": "PC_Pendant",
+  "version": "0.0.1",
+  "enable":1,
+  "canBeDeleted":0,
+  "showInMenu":1,
+  "order":25,
+  "setUrl":"/app/PC_Pendant/",
+  "intro":"主播可以更换挂件"
+}

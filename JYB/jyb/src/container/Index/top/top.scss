@@ -1,0 +1,46 @@
+.top-wrap {
+  display: flex;
+  height: 1.466667rem /* 110/75 */;
+  background-color: #ffffff;
+  align-items: center;
+  .top-pic {
+    flex-grow: 1;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    img {
+      height: 0.88rem;
+    }
+  }
+  .top-carousel {
+    flex-grow: 14;    
+    height: .88rem /* 66/75 */;
+    margin-top: 0.02rem;
+    .slider-frame {
+      height: 0.88rem !important;
+    }
+    .topic-item {
+      display: flex;
+      height: 0.44rem;      
+      align-items: center;
+      .topic-tag {
+        font-size: .22rem;
+        border: 1px solid #f00;
+        border-radius: .066667rem /* 5/75 */;
+        padding: 0 0.15rem;
+        color: #ff0000;
+        white-space: nowrap;
+      }
+      .topic-title {
+        margin-bottom: 0;
+        margin-left: .133333rem /* 10/75 */;
+        font-size: .28rem /* 21/75 */;
+        color: #c46a29;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding-right: .266667rem /* 20/75 */;
+      }
+    }
+  }
+}

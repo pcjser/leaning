@@ -1,0 +1,47 @@
+.inex-page {
+    .banner {
+        display: block;
+        height: 445rpx;
+        width: 750rpx;
+    }
+    .container {
+        padding: 38rpx 34rpx 0;
+        color: #303030;
+        .title {
+            font-size: 38rpx;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .link {
+            display: flex;
+            flex-wrap: wrap;
+            .link-item {
+                background-color: #f3f3f3;
+                border-radius: 10rpx;
+                margin-top: 34rpx;
+                &:nth-child(2n-1) {
+                    margin-right: 34rpx;
+                }
+                navigator {
+                    font-size: 34rpx;
+                    height: 152rpx;
+                    width: 324rpx;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .image-wrap {
+                        margin-left: 26rpx;
+                        width: 92rpx;
+                        height: 92rpx;
+                        border: 2rpx dashed rgba(54, 153, 255, .6);
+                        background-color: rgba(54, 153, 255, .2);
+                        image {
+                            width: 90rpx;
+                            height: 90rpx;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <META HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <META HTTP-EQUIV="expires" CONTENT="0">
+    <title>应用</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html,body {
+            height: 100%;
+            width: 100%;
+            /*color: #fff;*/
+            overflow: hidden;
+            position: relative;
+        }
+        [id^=stage] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            /*width: 100%;*/
+            /*height: 100%;*/
+            /*background: red;*/
+        }
+    </style>
+</head>
+<style>
+    #loading{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        margin-top: 0px;
+        top: 0px;
+    }
+    #loading .loading-center{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    #loading .loading-center-absolute {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 200px;
+        width: 200px;
+        margin-top: -100px;
+        margin-left: -100px;
+    }
+    #loading .object{
+        width: 80px;
+        height: 80px;
+        background-color: #efefef;
+        -webkit-animation: loadanimate 1s infinite ease-in-out;
+        animation: loadanimate 1s infinite ease-in-out;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 60px;
+    }
+    @-webkit-keyframes loadanimate {
+        0% { -webkit-transform: perspective(160px); }
+        50% { -webkit-transform: perspective(160px) rotateY(-180deg); }
+        100% { -webkit-transform: perspective(160px) rotateY(-180deg) rotateX(-180deg); }
+    }
+
+    @keyframes loadanimate {
+        0% {
+            transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+            -webkit-transform: perspective(160px) rotateX(0deg) rotateY(0deg);
+        } 50% {
+              transform: perspective(160px) rotateX(-180deg) rotateY(0deg);
+              -webkit-transform: perspective(160px) rotateX(-180deg) rotateY(0deg) ;
+          } 100% {
+                transform: perspective(160px) rotateX(-180deg) rotateY(-180deg);
+                -webkit-transform: perspective(160px) rotateX(-180deg) rotateY(-180deg);
+            }
+    }
+</style>
+<body>
+    <div id="loading">
+        <div class="loading-center">
+            <div class="loading-center-absolute">
+                <div class="object"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<link href="/src/stylesheets/alertify.core.css?_=a40576bf1c9b9e11d764775da00ffaff" rel="stylesheet">
+<link href="/src/stylesheets/alertify.default.css?_=287e1debb8fcf4b59ac33d991c1879a0" rel="stylesheet">
+<link href="/src/stylesheets/animate.css?_=709561d4e8fc6a05d0a591a743c11220" rel="stylesheet">
+<script src="/src/js/lodash.min.js?_=c8515f131f3194c32a3670c8e274fab6"></script>
+<script src="/src/js/zepto.min.js?_=bd123c5ca06cc7194f3be64fad959d1d"></script>
+<script src="/src/js/template.js?_=dd622e58c9a123bbf70a159c8b3b0f10"></script>
+<script src="/src/js/alertify.min.js?_=b9f96153321d5ef458602a415a0c5fa2"></script>
+<script src="/src/js/network.webSocket.js?_=88015e59a9709781058f8817cab3c5e5"></script>
+<script src="/src/js/network.ajax.js?_=81911106ab143a89838ca6bafba36c95"></script>
+<script src="/src/js/obscommon.js?_=f39aa09a3205237083acec14856ee051"></script>
+<script src="/src/js/preload.js?_=cbb0401161315bab9dc7df48e9777a1b"></script>
+
+<script>
+    if(cacheStatus()===1)
+    {
+        document.write('<script src="https://cdn.bootcss.com/blueimp-md5/2.7.0/js/md5.min.js"><\/script>');
+        document.write('<script src="/md5.js?_=2153e59317fb27e20cd849f8d2ef52c9"><\/script>');
+    }
+</script>
+
+<script src="/config.js?_=777b4644ff788cf0148deee29fc5a7e1"></script>
+<script src="/PM.js?_=e8cc3fe44785e5ca5e64ceafa1bb5437"></script>
+<script src="/baseApp.js?_=3481dd72ac0e854aeeee0c991e58660a"></script>
+<script>
+    window.fire = function(str) {
+        logGroup('From HeyBo',true);
+        log(str);
+        logGroup('From HeyBo',false);
+        try {
+            var data = toJson(str);
+            if (typeof(data.event) != 'undefined') {
+                PM.event(data.event, data.data || {});
+            } else {
+                if (data.app == 'PM') {
+                    PM[data.method](data.data || {});
+                } else {
+                    PM.run(data.app, data.method, data.data || {});
+                }
+            }
+        } catch (e) {
+            log(nl2br(e.stack),'error');
+        }
+
+    };
+
+    if (typeof(window.obsstudio) != 'undefined') {
+        window.obsstudio.fire = window.fire;
+    }
+
+    window.onload=function()
+    {
+        PM.init();
+        $('#loading').remove();
+    }
+</script>
+
+</html>

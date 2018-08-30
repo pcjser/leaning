@@ -1,0 +1,19 @@
+<view class="store-record-page">
+  <loading wx:if="{{!init}}">加载中...</loading>
+  <scroll-view wx:if="{{init && recordList.length > 0}}" class="container" scroll-y bindscrolltolower="loadmore">
+    <view class="record-list">
+      <block wx:for="{{recordList}}" wx:for-item="record" wx:key="record-{{index}}">
+        <navigator url="./detail/detail?orderId={{record.sn}}" class="record-item">
+          <view class="r-name">{{record.subject}}</view>
+          <view class="r-time">兑换时间：{{record.create_ts}}</view>
+          <view class="r-num">兑换数量：{{record.num}}</view>
+        </navigator>
+      </block>
+    </view>
+    <view class="no-more" wx:if="{{!hasMore}}">暂无更多数据</view>
+  </scroll-view>
+  <view wx:else class="no-data">
+    <image class="no-data-img" src="../../../assets/no_data.png" />
+    <view class="no-data-text">暂无数据</view>
+  </view>
+</view>

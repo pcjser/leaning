@@ -1,0 +1,47 @@
+<!DOCTYPE html>  
+<html>  
+  
+    <head>  
+        <meta charset="UTF-8">  
+        <title>DOM中的UL的排序</title>  
+        <script type="text/javascript">  
+            window.onload = function() {  
+                var oBtn = document.getElementById("btn1");  
+                var oUl = document.getElementById("ul1");  
+                oBtn.onclick = function() {  
+                    var aLi = oUl.getElementsByTagName("li");  
+                    var arr = [];  
+                    var i = 0;  
+                    //1、转成数组  
+                    for (i = 0; i < aLi.length; i++) {  
+                        arr[i] = aLi[i];  
+                    }  
+                    console.log(arr)  
+                    //2、数组排序  
+                    arr.sort(function(li1, li2) {  
+                        return parseInt(li1.innerHTML) - parseInt(li2.innerHTML);  
+                    });  
+                    //3、重新插入  
+                    for (i = 0; i < arr.length; i++) {  
+                        oUl.appendChild(arr[i]);  
+                        //父节点.appendChild()的实现，会把这个元素节点从ul里面删除，然后在加入。  
+                        // 就好比，人上班一样。再加入新的公司，要在当前的公司，离职一样  
+                    }  
+                }  
+            }  
+        </script>  
+    </head>  
+  
+    <body>  
+        <button type="button" id="btn1">排序</button>  
+        <ul id="ul1">  
+            <li>23</li>  
+            <li>66</li>
+            <li>6</li>    
+            <li>12</li>  
+            <li>6</li>  
+            <li>88</li>  
+        </ul>  
+    </body>  
+  
+</html>
